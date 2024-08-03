@@ -7,7 +7,7 @@ function verifyCSRFToken($token) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!verifyCSRFToken($_POST['csrf_token'])) {
-        echo json_encode(["success" => false, "message" => "Token CSRF non valido"]);
+        echo json_encode(["success" => false, "message" => "Token CSRF non valido, riavvio pagina"]);
         exit;
     }
 

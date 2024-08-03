@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Applicazione</title>
+    <link rel="stylesheet" href="HTML/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+<header>
+    <h1 id="Titolo">Login</h1>
+    <div id="userbox" style="display: none;">
+        <div id="boxInfo" style="display: none;">
+            <p><span id="usernameUserbox"></span></p>
+            <p id="logout">Logout</p>
+        </div>
+    </div>
+</header>
 <div id="loginContainer">
-    <h1>Login</h1>
     <form id="loginForm">
         <input type="hidden" id="csrf_token" name="csrf_token">
         <label for="username">Username:</label>

@@ -7,12 +7,6 @@ console.log('. Classe 3X Informatica 2022/23 (Project Manager: Gabriele Bovina e
 console.log('. Classe 5X Informatica 2020/21 (Project Manager: Luca Corticelli e Diego Bonati)');
 console.log('Ringraziamenti per il supporto e la collaborazione per gli eventi giornalieri: ');
 
-$(document).ready(function() {
-    checkSession();
-    loadCSRFToken();
-    $('#loginForm').on('submit', handleLogin);
-});
-
 function checkSession(callback) {
     $.ajax({
         url: 'php/checkSession.php',
@@ -20,6 +14,7 @@ function checkSession(callback) {
         dataType: 'json',
         success: function(data) {
             if (data.loggedIn) {
+                document.getElementById('userbox').style.display = 'block';
                 if (callback) callback(true);
             } else {
                 if (data.sessionExpired) {
@@ -65,10 +60,21 @@ function setupNavigation() {
         const page = $(this).data('page');
         if (page) {
             loadContent(page);
-        } else if ($(this).attr('id') === 'logout') {
-            handleLogout();
         }
     });
+    //ascolto se userbox è cliccato
+    document.getElementById('userbox').addEventListener('click', function() {
+        //mostro il menu se è nascosto
+        if (document.getElementById('boxInfo').style.display === 'none') {
+            document.getElementById('boxInfo').style.display = 'block';
+        } else {
+            //altrimenti lo nascondo
+            document.getElementById('boxInfo').style.display = 'none';
+        }
+    });
+    //aggiungo un ascolto se viene premuto il tasto logout
+    document.getElementById('logout').addEventListener('click', handleLogout);
+    document.getElementById('usernameUserbox').innerHTML = 'Buongiorno ' + $('#username').val();
 }
 
 function showLoggedInState() {
@@ -89,7 +95,8 @@ function loadCSRFToken() {
             $('#csrf_token').val(token);
         })
         .fail(function(error) {
-            console.error('Errore nel caricamento del token CSRF:', error);
+            console.error('Riavvio della pagina:', error);
+            window.location.reload();
         });
 }
 
@@ -109,9 +116,11 @@ function handleLogin(e) {
         dataType: 'json',
         success: function(data) {
             if (data.success) {
+                document.getElementById('userbox').style.display = 'block';
                 showLoggedInState(formData.username);
             } else {
                 $('#result').text(data.message);
+                window.location.reload();
             }
         },
         error: function(jqXHR, textStatus, errorThrown) {
@@ -139,6 +148,7 @@ function handleLogout() {
                 $('#mainContent').empty();
                 $('#loginForm')[0].reset();
                 loadCSRFToken();
+                window.location.reload();
             } else {
                 console.error('Errore durante il logout:', data ? data.message : 'Risposta non valida');
             }
