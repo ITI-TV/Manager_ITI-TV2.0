@@ -1,5 +1,5 @@
-function startBenvenuto(){
-    document.getElementById('Titolo').innerHTML = "Benvenuto";
+function start(){
+ //faccio un ascolto a
 }
 
-startBenvenuto();
+start()

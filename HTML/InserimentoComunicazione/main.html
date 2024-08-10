@@ -1,0 +1,50 @@
+<div id="FormInserimentoComunicazione">
+    <label for="TagComunicazione">TAG</label>
+    <select id="TagComunicazione">
+        <option value="niente">Seleziona un opzione</option>
+        <option value="Comunicazione">Comunicazione</option>
+        <option value="News">News</option>
+        <option value="Emergenza">Emergenza</option>
+    </select>
+    <label for="NumeroComunicazione" id="labelNumeroComunicazione">Numero</label>
+    <input type="number" id="NumeroComunicazione" required min="1" max="9999">
+    <label for="TitoloComunicazione" id="labelTitoloComunicazione">0/55</label>
+    <input type="text" id="TitoloComunicazione" max="55" min="1" placeholder="Titolo">
+    <label for="CorpoComunicazione" id="labelCorpoComunicazione">0/300</label>
+    <input type="text" id="CorpoComunicazione" max="300" min="1" placeholder="Corpo">
+    <label for="DataInizioComunicazione">Data Inizio</label>
+    <input type="date" id="DataInizioComunicazione" required>
+    <label for="DataFineComunicazione">Data Fine</label>
+    <input type="date" id="DataFineComunicazione" required>
+    <div id="Azioni">Azioni</div>
+    <button id="InserisciComunicazione">+</button>
+</div>
+<div id="BoxTestoAnteprimaComunicazione">Anteprima Comunicazione</div>
+<div id="AnteprimaComunicazione">
+    <div id="HeadComunicazioneAnteprima">
+        <div id="NumeroComunicazioneAnteprima"></div>
+        <div id="DivisoreNumeroTitoloComunicazioneAnteprima"></div>
+        <div id="TitoloComunicazioneAnteprima"></div>
+    </div>
+    <div id="MainComunicazioneAnteprima">
+        <div id="CorpoComunicazioneAnteprima"></div>
+    </div>
+    <div id="FooterComunicazioneAnteprima">
+        <div id="FirmaComunicazioneAnteprima"></div>
+    </div>
+</div>
+<div id="BoxTestoUltimaComunicazione">Ultima Comunicazione</div>
+<div id="UltimaComunicazione">
+    <div id="HeadUltimaComunicazione">
+        <div id="NumeroUltimaComunizazione"></div>
+        <div id="DivisoreNumeroTitoloUltimaComunicazione"></div>
+        <div id="TitoloUltimaComunicazione"></div>
+    </div>
+    <div id="MainUltimaComunicazione">
+        <div id="CorpoUltimaComunicazione"></div>
+    </div>
+    <div id="FooterUltimaComunicazione">
+        <div id="FirmaUltimaComunicazione"></div>
+    </div>
+</div>
+<script src="js/Inserisci%20Comunicazione/main.js"></script>

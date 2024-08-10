@@ -1,3 +1,31 @@
+/* --FONTS-- */
+@font-face {
+    font-family: FiraMono;
+    src: url(/Fonts/FiraMono/FiraMono-Bold.ttf) format("truetype");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: OutFit;
+    src: url(/Fonts/OutFit/Outfit-VariableFont_wght.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Righteous;
+    src: url(/Fonts/Righteous/Righteous-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Recursive;
+    src: url(/Fonts/Recursive/Recursive-VariableFont_CASL,CRSV,MONO,slnt,wght.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(/Fonts/Inter/Inter-VariableFont_slnt,wght.ttf) format("truetype");
+}
+
+/*GRAFICA BASE*/
 #userbox{
     position: absolute;
     top: 20px;
@@ -23,4 +51,144 @@
 
 #logout:hover{
     background-color: red;
+}
+
+/*GRAFICA INSERIMENTO COMUNICAZIONE*/
+#TitoloComunicazione, #CorpoComunicazione, #NumeroComunicazione, #DataFineComunicazione, #DataInizioComunicazione, #InserisciComunicazione{
+    pointer-events: none;
+}
+
+.error{
+    color: red;
+}
+
+#AnteprimaComunicazione {
+    width: 600px;
+    height: 675px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    border: 2.5px solid #FFF;
+    background: #205295;
+    position: absolute;
+    top: 31px;
+    left: 660px;
+}
+
+#UltimaComunicazione {
+    width: 600px;
+    height: 675px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    border: 2.5px solid #FFF;
+    background: #205295;
+    position: absolute;
+    top: 31px;
+    left: 1295px;
+}
+
+#NumeroComunicazioneAnteprima,
+#NumeroUltimaComunizazione{
+    width: 156px;
+    height: 132px;
+    position: absolute;
+    top: 0;
+    left: 2px;
+    color: #FFF;
+    text-align: center;
+    font-family: 'OutFit', sans-serif;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 735;
+    line-height: normal;
+    /*metto il testo al centro sia verticale che orizzontale*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#DivisoreNumeroTitoloComunicazioneAnteprima,
+#DivisoreNumeroTitoloUltimaComunicazione{
+    width: 4px;
+    height: 132px;
+    flex-shrink: 0;
+    background: #FFF;
+    position: absolute;
+    top: 0;
+    left: 154px;
+}
+
+#HeadComunicazioneAnteprima,
+#HeadUltimaComunicazione{
+    width: 596px;
+    height: 132px;
+    flex-shrink: 0;
+    border-bottom: 5px solid #0E284B;
+    border-radius: 15px 15px 0 0;
+    background: #004996;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    z-index: 0;
+}
+
+#CorpoComunicazioneAnteprima,
+#CorpoUltimaComunicazione{
+    text-align: justify;
+    width: 560px;
+    color: #FFF;
+    font-family: 'OutFit', sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    height: 440px;
+    position: absolute;
+    top: 150px;
+    left: 20px;
+}
+
+#TitoloComunicazioneAnteprima,
+#TitoloUltimaComunicazione{
+    display: flex;
+    width: 440px;
+    height: 132px;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: center;
+    color: #FFF;
+    text-align: center;
+    font-family: 'OutFit', sans-serif;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    left: 157px;
+    z-index: 1;
+    align-items: center;
+}
+
+#FooterComunicazioneAnteprima,
+#FooterUltimaComunicazione{
+    width: 596px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 0 0 15px 15px;
+    background: #004996;
+    border-top: 5px solid #0E284B;
+    position: absolute;
+    top: 630px;
+    left: 0;
+}
+
+#FirmaComunicazioneAnteprima,
+#FirmaUltimaComunicazione {
+    color: #FFF;
+    text-align: left;
+    font-family: 'OutFit', sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    line-height: normal;
+    position: absolute;
+    left: 28px;
 }

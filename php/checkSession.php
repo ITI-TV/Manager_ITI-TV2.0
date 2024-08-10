@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 
 // Funzione per controllare se la sessione è scaduta
 function isSessionExpired() {
-    $max_lifetime = 1 * 60; // 30 minuti in secondi
+    $max_lifetime = 5 * 60; // 30 minuti in secondi
     if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > $max_lifetime)) {
         return true;
     }

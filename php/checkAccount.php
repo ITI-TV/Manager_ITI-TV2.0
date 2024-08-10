@@ -14,8 +14,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // Connessione al database
-    $db = new mysqli("192.168.1.147", "ititv", "ititv", "ititv");
+    // Connessione al database prendendo le info da infoAccess.php
+    require "infoAccess.php";
+    $db = new mysqli($serverConn, $usernameConn, $passwordConn, $dbnameConn);
 
     if ($db->connect_error) {
         echo json_encode(["success" => false, "message" => "Errore di connessione al database"]);
