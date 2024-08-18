@@ -39,6 +39,7 @@ function loadContent(page) {
                 'inserimento-comunicazione': 'HTML/InserimentoComunicazione/main.html',
                 'inserimento-componente': 'HTML/InserimentoComponenteAggiuntivo/main.html',
                 'visualizza-comunicazioni': 'HTML/VisualizzaComunicazioni/main.html',
+                'visualizza-componenti': 'HTML/VisualizzaComponentiAggiuntivi/main.html',
                 'eventi-giornalieri': 'HTML/VisualizzaModificaEventiGiornalieri/main.html',
                 'contatti': 'HTML/Contatti/main.html'
             };
