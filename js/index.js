@@ -1,5 +1,5 @@
 console.log('Benvenuto nel Manager del progetto ITI-TV dell`IIS "N.Copernico A.Carpeggiani"');
-console.log('Versione b2.0.2');
+console.log('Versione b2.0.11');
 console.log('Crediti: ');
 console.log('. Classe 5X Informatica 2024/25 (Project Manager: Gabriele Bovina e Samuele Marinelli)');
 console.log('. Classe 4X Informatica 2023/24 (Project Manager: Gabriele Bovina e Samuele Marinelli)');
