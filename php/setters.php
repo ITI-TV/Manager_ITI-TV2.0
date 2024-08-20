@@ -146,4 +146,52 @@ if($_POST['action'] == 'setComm'){
     $_SESSION['last_activity'] = time();
     require ('GestoreNumeroPagine.php');
     echo json_encode(["success" => true, "message" => "News inserita correttamente"]);
+}else if($_POST['action']=="setComponenteAggiuntivo"){
+    $TitoloComponente = $_POST['Titolo'];
+    $CorpoComponente = $_POST['Corpo'];
+    $FirmaComponente = $_POST['Firma'];
+    $DataInizioComponente = $_POST['DataInizio'];
+    $DataFineComponente = $_POST['DataFine'];
+    $ImmagineComponente = $_POST['Immagine'];
+    require "infoAccess.php";
+    $db = new mysqli($serverConn, $usernameConn, $passwordConn, $dbnameConn);
+    if ($db->connect_error) {
+        echo json_encode(["success" => false, "message" => "Errore di connessione al database"]);
+        exit;
+    }
+    $data= date("Y-m-d H:i:s");
+    try{
+        $stmt = $db->prepare("SELECT * FROM componenti_aggiuntivi WHERE Titolo = ?");
+        $stmt->bind_param("s", $TitoloComponente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            echo json_encode(["success" => false, "message" => "Titolo già presente"]);
+            exit;
+        }
+    } catch (Exception $e) {
+        echo json_encode(["success" => false, "message" => "Errore nella query"]);
+        exit;
+    }
+    try{
+        $stmt = $db->prepare("SELECT * FROM componenti_aggiuntivi WHERE Testo = ?");
+        $stmt->bind_param("s", $CorpoComponente);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            echo json_encode(["success" => false, "message" => "Corpo già presente"]);
+            exit;
+        }
+    } catch (Exception $e) {
+        echo json_encode(["success" => false, "message" => "Errore nella query"]);
+        exit;
+    }
+    $stmt = $db->prepare("INSERT INTO componenti_aggiuntivi (Data, Prof, Titolo, Testo, Data_inizio, Data_fine, Immagine) VALUE (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssss", $data, $FirmaComponente, $TitoloComponente, $CorpoComponente, $DataInizioComponente, $DataFineComponente, $ImmagineComponente);
+    $stmt->execute();
+    $stmt->close();
+    $db->close();
+    $_SESSION['last_activity'] = time();
+    require ('GestoreNumeroPagine.php');
+    echo json_encode(["success" => true, "message" => "Componente inserito correttamente"]);
 }

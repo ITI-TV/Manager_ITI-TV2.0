@@ -363,6 +363,12 @@
     max-height: 90%;
     width: auto;
     height: auto;
+    color: #FFF;
+    text-align: justify;
+    font-family: 'OutFit', sans-serif;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 500;
 }
 
 #TestoComponentiAggiuntivi {

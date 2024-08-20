@@ -24,7 +24,8 @@ function start(){
             document.getElementById('TitoloComunicazione').removeEventListener('input',  checkTitoloComunicazione);
             document.getElementById('CorpoComunicazione').removeEventListener('input', checkCorpoComunicazione);
             document.getElementById('NumeroComunicazione').removeEventListener('input', checkNumeroComunicazione);
-            document.getElementById('DataFineComunicazione').removeEventListener('change', checkDataComunicazione);
+            document.getElementById('DataFineComunicazione').removeEventListener('change', checkDateFine);
+            document.getElementById('DataInizioComunicazione').removeEventListener('change', checkDateInizio);
             document.getElementById('InserisciComunicazione').removeEventListener('click', InserisciComunicazione);
             // nascondo TitoloComunicazione e il suo label
             document.getElementById('TitoloComunicazione').style.display = 'none';
@@ -44,7 +45,8 @@ function start(){
             document.getElementById('TitoloComunicazione').removeEventListener('input',  checkTitoloComunicazione);
             document.getElementById('CorpoComunicazione').removeEventListener('input', checkCorpoComunicazione);
             document.getElementById('NumeroComunicazione').removeEventListener('input', checkNumeroComunicazione);
-            document.getElementById('DataFineComunicazione').removeEventListener('change', checkDataComunicazione);
+            document.getElementById('DataFineComunicazione').removeEventListener('change', checkDateFine);
+            document.getElementById('DataInizioComunicazione').removeEventListener('change', checkDateInizio);
             document.getElementById('InserisciComunicazione').removeEventListener('click', InserisciComunicazione);
             //nascondo TitoloComunicazione e il suo label
             document.getElementById('TitoloComunicazione').style.display = 'none';
@@ -60,6 +62,7 @@ function start(){
         }
         //se niente è selezionato
         else {
+            document.getElementById('CorpoComunicazioneAnteprima').innerHTML = "";
             //mostro TitoloComunicazione e il suo label
             document.getElementById('TitoloComunicazione').style.display = 'block';
             document.getElementById('labelTitoloComunicazione').style.display = 'block';
@@ -121,9 +124,17 @@ function checkCorpoComunicazione(){
     document.getElementById('CorpoComunicazioneAnteprima').innerHTML = document.getElementById('CorpoComunicazione').value;
 }
 
-function checkDataComunicazione(){
-    if (document.getElementById('DataFineComunicazione').value < document.getElementById('DataInizioComunicazione').value) {
+function checkDateFine(){
+    //se la data di fine è minore della data di inizio allora sostituisco la data di inizio con la data di fine
+    if(document.getElementById('DataFineComunicazione').value < document.getElementById('DataInizioComunicazione').value){
         document.getElementById('DataInizioComunicazione').value = document.getElementById('DataFineComunicazione').value;
+    }
+}
+
+function checkDateInizio(){
+    //se la data di inizio è maggiore della data di fine allora sostituisco la data di fine con la data di inizio
+    if(document.getElementById('DataInizioComunicazione').value > document.getElementById('DataFineComunicazione').value){
+        document.getElementById('DataFineComunicazione').value = document.getElementById('DataInizioComunicazione').value;
     }
 }
 
@@ -186,7 +197,8 @@ function checkInfoComm() {
     document.getElementById('TitoloComunicazione').addEventListener('input', checkTitoloComunicazione);
     document.getElementById('CorpoComunicazione').addEventListener('input', checkCorpoComunicazione);
     //controllo che data di fine non sia minore di data di inizio
-    document.getElementById('DataFineComunicazione').addEventListener('change', checkDataComunicazione);
+    document.getElementById('DataFineComunicazione').addEventListener('change', checkDateFine);
+    document.getElementById('DataInizioComunicazione').addEventListener('change', checkDateInizio);
     //quado premo sul punsalte AggiungiComunicazione, controllo che TitoloComunicazione, CorpoComunicazione, NumeroComunicazione, DataInizioComunicazione e DataFineComunicazione non sia vuoto
     document.getElementById('InserisciComunicazione').addEventListener('click', InserisciComunicazione);
 }
@@ -220,7 +232,8 @@ function checkInfoNews(){
     document.getElementById('labelCorpoComunicazione').innerHTML = '0/inf';
     document.getElementById('CorpoComunicazione').addEventListener('input', checkCorpoNews);
     //controllo che data di fine non sia minore di data di inizio
-    document.getElementById('DataFineComunicazione').addEventListener('change', checkDataComunicazione);
+    document.getElementById('DataFineComunicazione').addEventListener('change', checkDateFine);
+    document.getElementById('DataInizioComunicazione').addEventListener('change', checkDateInizio);
     //quado premo sul punsalte AggiungiComunicazione, controllo che TitoloComunicazione, CorpoComunicazione, NumeroComunicazione, DataInizioComunicazione e DataFineComunicazione non sia vuoto
     document.getElementById('InserisciComunicazione').addEventListener('click', InserisciNews);
 
@@ -288,7 +301,8 @@ function checkInfoEmerg(){
     document.getElementById('labelCorpoComunicazione').innerHTML = '0/inf';
     document.getElementById('CorpoComunicazione').addEventListener('input', checkCorpoEmerg);
     //controllo che data di fine non sia minore di data di inizio
-    document.getElementById('DataFineComunicazione').addEventListener('change', checkDataComunicazione);
+    document.getElementById('DataFineComunicazione').addEventListener('change', checkDateFine);
+    document.getElementById('DataInizioComunicazione').addEventListener('change', checkDateInizio);
     //quado premo sul punsalte AggiungiComunicazione, controllo che TitoloComunicazione, CorpoComunicazione, NumeroComunicazione, DataInizioComunicazione e DataFineComunicazione non sia vuoto
     document.getElementById('InserisciComunicazione').addEventListener('click', InserisciEmerg);
 }

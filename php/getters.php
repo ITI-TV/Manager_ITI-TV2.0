@@ -32,4 +32,19 @@ if(isset($_GET['action']) && $_GET['action'] == "getComunicazioni"){
         $contatti[] = $row;
     }
     echo json_encode($contatti);
+}else if($_GET['action'] == "getComponentiAggiuntivi") {
+    require "infoAccess.php";
+    $db = new mysqli($serverConn, $usernameConn, $passwordConn, $dbnameConn);
+    if ($db->connect_error) {
+        echo json_encode(["success" => false, "message" => "Errore di connessione al database"]);
+        exit;
+    }
+    $stmt = $db->prepare("SELECT * FROM componenti_aggiuntivi ORDER BY Data ");
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $eventi = [];
+    while ($row = $result->fetch_assoc()) {
+        $eventi[] = $row;
+    }
+    echo json_encode($eventi);
 }

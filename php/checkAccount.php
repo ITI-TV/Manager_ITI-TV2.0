@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Preparazione della query
-    $stmt = $db->prepare("SELECT password FROM Utenti WHERE username = ?");
+    $stmt = $db->prepare("SELECT password FROM utenti WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
