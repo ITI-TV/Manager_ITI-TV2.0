@@ -4,6 +4,16 @@ function start(){
     document.getElementById('TagComunicazione').addEventListener('change', function() {
         //se Comunicazione è selezionato
         if (document.getElementById('TagComunicazione').value === 'Comunicazione') {
+            document.getElementById('CorpoComunicazione').removeEventListener('input', checkCorpoEmerg);
+            document.getElementById('DataFineComunicazione').removeEventListener('change', checkDateFine);
+            document.getElementById('DataInizioComunicazione').removeEventListener('change', checkDateInizio);
+            document.getElementById('InserisciComunicazione').removeEventListener('click', InserisciEmerg);
+
+            document.getElementById('CorpoComunicazione').removeEventListener('input', checkCorpoNews);
+            document.getElementById('DataFineComunicazione').removeEventListener('change', checkDateFine);
+            document.getElementById('DataInizioComunicazione').removeEventListener('change', checkDateInizio);
+            document.getElementById('InserisciComunicazione').removeEventListener('click', InserisciNews);
+
             //mostro TitoloComunicazione e il suo label
             document.getElementById('TitoloComunicazione').style.display = 'block';
             document.getElementById('labelTitoloComunicazione').style.display = 'block';
@@ -27,6 +37,11 @@ function start(){
             document.getElementById('DataFineComunicazione').removeEventListener('change', checkDateFine);
             document.getElementById('DataInizioComunicazione').removeEventListener('change', checkDateInizio);
             document.getElementById('InserisciComunicazione').removeEventListener('click', InserisciComunicazione);
+
+            document.getElementById('CorpoComunicazione').removeEventListener('input', checkCorpoEmerg);
+            document.getElementById('DataFineComunicazione').removeEventListener('change', checkDateFine);
+            document.getElementById('DataInizioComunicazione').removeEventListener('change', checkDateInizio);
+            document.getElementById('InserisciComunicazione').removeEventListener('click', InserisciEmerg);
             // nascondo TitoloComunicazione e il suo label
             document.getElementById('TitoloComunicazione').style.display = 'none';
             document.getElementById('labelTitoloComunicazione').style.display = 'none';
@@ -48,6 +63,11 @@ function start(){
             document.getElementById('DataFineComunicazione').removeEventListener('change', checkDateFine);
             document.getElementById('DataInizioComunicazione').removeEventListener('change', checkDateInizio);
             document.getElementById('InserisciComunicazione').removeEventListener('click', InserisciComunicazione);
+
+            document.getElementById('CorpoComunicazione').removeEventListener('input', checkCorpoNews);
+            document.getElementById('DataFineComunicazione').removeEventListener('change', checkDateFine);
+            document.getElementById('DataInizioComunicazione').removeEventListener('change', checkDateInizio);
+            document.getElementById('InserisciComunicazione').removeEventListener('click', InserisciNews);
             //nascondo TitoloComunicazione e il suo label
             document.getElementById('TitoloComunicazione').style.display = 'none';
             document.getElementById('labelTitoloComunicazione').style.display = 'none';
@@ -231,10 +251,8 @@ function checkInfoNews(){
     document.getElementById('CorpoComunicazioneAnteprima').innerHTML = "Si sta inserendo una News, quindi non è presente l'anteprima";
     document.getElementById('labelCorpoComunicazione').innerHTML = '0/inf';
     document.getElementById('CorpoComunicazione').addEventListener('input', checkCorpoNews);
-    //controllo che data di fine non sia minore di data di inizio
     document.getElementById('DataFineComunicazione').addEventListener('change', checkDateFine);
     document.getElementById('DataInizioComunicazione').addEventListener('change', checkDateInizio);
-    //quado premo sul punsalte AggiungiComunicazione, controllo che TitoloComunicazione, CorpoComunicazione, NumeroComunicazione, DataInizioComunicazione e DataFineComunicazione non sia vuoto
     document.getElementById('InserisciComunicazione').addEventListener('click', InserisciNews);
 
 }
@@ -279,8 +297,6 @@ function InserisciNews(){
                             document.getElementById('DataFineComunicazione').value = '';
                             //azzero i due counter
                             document.getElementById('labelCorpoComunicazione').innerHTML = "0/inf";
-                            //azzero i box dell'anteprima
-                            document.getElementById('CorpoComunicazioneAnteprima').innerHTML = '';
                             //richiamo lastComm
                             lastComm();
                         }
@@ -300,10 +316,8 @@ function checkInfoEmerg(){
     document.getElementById('CorpoComunicazioneAnteprima').innerHTML = "Si sta inserendo un'Emergenza, quindi non è presente l'anteprima";
     document.getElementById('labelCorpoComunicazione').innerHTML = '0/inf';
     document.getElementById('CorpoComunicazione').addEventListener('input', checkCorpoEmerg);
-    //controllo che data di fine non sia minore di data di inizio
     document.getElementById('DataFineComunicazione').addEventListener('change', checkDateFine);
     document.getElementById('DataInizioComunicazione').addEventListener('change', checkDateInizio);
-    //quado premo sul punsalte AggiungiComunicazione, controllo che TitoloComunicazione, CorpoComunicazione, NumeroComunicazione, DataInizioComunicazione e DataFineComunicazione non sia vuoto
     document.getElementById('InserisciComunicazione').addEventListener('click', InserisciEmerg);
 }
 
@@ -347,8 +361,6 @@ function InserisciEmerg(){
                             document.getElementById('DataFineComunicazione').value = '';
                             //azzero i due counter
                             document.getElementById('labelCorpoComunicazione').innerHTML = "0/inf";
-                            //azzero i box dell'anteprima
-                            document.getElementById('CorpoComunicazioneAnteprima').innerHTML = '';
                             //richiamo lastComm
                             lastComm();
                         }

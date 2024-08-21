@@ -145,7 +145,7 @@ if($_POST['action'] == 'setComm'){
     $db->close();
     $_SESSION['last_activity'] = time();
     require ('GestoreNumeroPagine.php');
-    echo json_encode(["success" => true, "message" => "News inserita correttamente"]);
+    echo json_encode(["success" => true, "message" => "Emergenza inserita correttamente"]);
 }else if($_POST['action']=="setComponenteAggiuntivo"){
     $TitoloComponente = $_POST['Titolo'];
     $CorpoComponente = $_POST['Corpo'];
