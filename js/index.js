@@ -74,10 +74,12 @@ function setupNavigation() {
         if (document.getElementById('boxInfo').style.display === 'none') {
             document.getElementById('boxInfo').style.display = 'block';
             document.getElementById('userbox').classList.add('userboxClicked');
+            document.getElementById('userbox').classList.remove('normalUserBox')
         } else {
             //altrimenti lo nascondo
             document.getElementById('boxInfo').style.display = 'none';
             document.getElementById('userbox').classList.remove('userboxClicked');
+            document.getElementById('userbox').classList.add('normalUserBox');
         }
     });
     //aggiungo un ascolto se viene premuto il tasto logout

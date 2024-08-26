@@ -57,7 +57,7 @@ body{
     background: #04326F;
 }
 
-#userbox{
+#userbox  {
     position: absolute;
     top: 0.44rem;
     right: 10px;
@@ -65,18 +65,18 @@ body{
     width: 6.25rem;
     height: 6.25rem;
     text-align: center;
-    background: #04326F;
     cursor: pointer;
+}
+
+.normalUserBox{
     border-radius: 0.9375rem 0.9375rem 0.9375rem 0.9375rem;
-    background-image: url("../img/UI/user.png");
-    background-repeat: no-repeat;
+    background: #04326F url("../img/UI/user.png") no-repeat;
     background-size: 100%;
 }
-.userboxClicked{
+
+.userboxClicked {
     border-radius: 15px 15px 0px 0px;
-    background: #479CFF;
-    background-image: url("../img/UI/user-hover.png");
-    background-repeat: no-repeat;
+    background: #479CFF url("../img/UI/user-hover.png") no-repeat;
     background-size: 100%;
 }
 
