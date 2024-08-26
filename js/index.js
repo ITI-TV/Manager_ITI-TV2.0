@@ -47,6 +47,8 @@ function loadContent(page) {
             const url = contentMap[page] || contentMap['home'];
 
             $('#mainContent').load(url, function(response, status, xhr) {
+                $('#navbar a').removeClass('active');
+                $('#navbar a [data-page="${page}"]').addClass('active');
                 if (status === 'error') {
                     console.error(`Errore nel caricamento di ${url}:`, xhr.status, xhr.statusText);
                 }

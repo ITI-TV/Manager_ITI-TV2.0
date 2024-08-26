@@ -1,11 +1,82 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    nav{
+        width: 95%;
+        border-radius: 0px 0px 24px 24px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 0px;
+        background: #005CD7;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    ul{
+    display: flex;
+    height: 58px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 20px;
+    color: #FFF;
+    text-align: center;
+    font-family: Outfit;
+    font-size: 24px;
+    font-style: normal;
+    
+    font-weight: 735;
+    line-height: normal;
+    list-style: none;
+    }
+    a{
+        background: #04326F;
+        color: #FFF;
+        text-align: center;
+        font-family: Outfit,sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        padding: 8px 1px;
+        display: block;
+        font-weight: 735;
+        line-height: normal;
+        list-style: none;
+        margin-inline-end: 0px;
+
+        text-decoration: none;
+    }
+    a:hover{
+        color: #000;
+        background: #479BFF;
+    }
+
+    .active{
+        background: #479BFF;
+        color: #000 ;
+    }
+    #home{
+        background-image: url(../img/UI/home.png);
+    }
+
+    #home:hover{
+        background-image: url(../img/UI/home-hover.png);
+    }
+</style>
+
 <nav>
     <ul>
-        <li><a href="#" data-page="home">Home</a></li>
-        <li><a href="#" data-page="inserimento-comunicazione">Inserimento Comunicazione</a></li>
-        <li><a href="#" data-page="inserimento-componente">Inserimento Componente Aggiuntivo</a></li>
-        <li><a href="#" data-page="visualizza-comunicazioni">Visualizza Comunicazioni</a></li>
-        <li><a href="#" data-page="visualizza-componenti">Visualizza Componenti Aggiuntivi</a></li>
-        <li><a href="#" data-page="eventi-giornalieri">Visualizza e modifica Eventi Giornalieri</a></li>
-        <li><a href="#" data-page="contatti">Contatti</a></li>
+        <li><a href="#"  style="border-radius: 15px 0 0 15px;">Home</a></li>
+        <li><a href="#" data-page="inserimento-comunicazione">Inserimento  Comunicazione </a></li>
+        <li><a href="#" data-page="inserimento-componente">Inserimento Componente Aggiuntivo </a></li>
+        <li><a href="#" data-page="visualizza-comunicazioni">Visualizza Comunicazioni </a></li>
+        <li><a href="#" data-page="visualizza-componenti">Visualizza Componenti Aggiuntivi </a></li>
+        <li><a href="#" data-page="eventi-giornalieri">Eventi Giornalieri</a></li>
+        <li><a href="#" data-page="contatti" style="border-radius: 0 15px 15px 0;">Contatti</a></li>
     </ul>
 </nav>

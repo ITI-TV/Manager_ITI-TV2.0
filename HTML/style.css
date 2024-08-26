@@ -196,10 +196,10 @@
 /*Visulizzazione Comunicazioni*/
 
 #BoxAnteprimaVisualizzazioneComunicazione {
-    width: 600px;
-    height: 675px;
+    width: 30.26344rem;
+    height: 40.9375rem;
     flex-shrink: 0;
-    border-radius: 15px;
+    border-radius: 0.9375rem;
     border: 2.5px solid #FFF;
     background: #205295;
     position: absolute;
@@ -283,11 +283,11 @@
 }
 
 #FooterVisualizzazioneComunicazioneAnteprima{
-    width: 596px;
-    height: 40px;
+    width: 30.26344rem;
+    height: 2.42594rem;
     flex-shrink: 0;
-    border-radius: 0 0 15px 15px;
-    background: #004996;
+    border-radius: 0rem 0rem 0.9375rem 0.9375rem;
+    background: #233284;
     border-top: 5px solid #0E284B;
     position: absolute;
     top: 630px;
