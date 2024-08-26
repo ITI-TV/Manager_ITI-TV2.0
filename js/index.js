@@ -7,6 +7,8 @@ console.log('. Classe 3X Informatica 2022/23 (Project Manager: Gabriele Bovina e
 console.log('. Classe 5X Informatica 2020/21 (Project Manager: Luca Corticelli e Diego Bonati)');
 console.log('Ringraziamenti per il supporto e la collaborazione per gli eventi giornalieri: ');
 
+let username;
+
 function checkSession(callback) {
     $.ajax({
         url: 'php/checkSession.php',
@@ -47,8 +49,9 @@ function loadContent(page) {
             const url = contentMap[page] || contentMap['home'];
 
             $('#mainContent').load(url, function(response, status, xhr) {
+                //do la clase active alla pagina selezionata
                 $('#navbar a').removeClass('active');
-                $('#navbar a [data-page="${page}"]').addClass('active');
+                $(`#navbar a[data-page="${page}"]`).addClass('active');
                 if (status === 'error') {
                     console.error(`Errore nel caricamento di ${url}:`, xhr.status, xhr.statusText);
                 }
@@ -77,7 +80,7 @@ function setupNavigation() {
     });
     //aggiungo un ascolto se viene premuto il tasto logout
     document.getElementById('logout').addEventListener('click', handleLogout);
-    document.getElementById('usernameUserbox').innerHTML = 'Buongiorno ' + $('#username').val();
+    document.getElementById('usernameUserbox').innerHTML = 'Buongiorno ' + username;
 }
 
 function showLoggedInState() {
@@ -119,8 +122,22 @@ function handleLogin(e) {
         dataType: 'json',
         success: function(data) {
             if (data.success) {
-                document.getElementById('userbox').style.display = 'block';
-                showLoggedInState(formData.username);
+
+                fetch('php/getUsername.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        //assegno il nome utente alla variabile username
+                        username = data;
+                        //mostro il nome utente
+                        console.log('Nome utente:', username);
+                        //mostro il contenuto dell'app
+                        document.getElementById('userbox').style.display = 'block';
+                        showLoggedInState();
+                    })
+                    .catch(error => {
+                        console.error('Errore nel recupero del nome utente:', error);
+                        showLoginForm();
+                    });
             } else {
                 $('#result').text(data.message);
                 window.location.reload();
@@ -166,11 +183,26 @@ function handleLogout() {
 $(document).ready(function() {
     checkSession(function(isLoggedIn) {
         if (isLoggedIn) {
-            showLoggedInState();
+            //contatto il file getUrsername.php per ottenere il nome utente
+            fetch('php/getUsername.php')
+                .then(response => response.json())
+                .then(data => {
+                    //assegno il nome utente alla variabile username
+                    username = data;
+                    //mostro il nome utente
+                    console.log('Nome utente:', username);
+                    //mostro il contenuto dell'app
+                    showLoggedInState();
+                })
+                .catch(error => {
+                    console.error('Errore nel recupero del nome utente:', error);
+                    showLoginForm();
+                });
         } else {
             showLoginForm();
         }
     });
     loadCSRFToken();
+
     $('#loginForm').on('submit', handleLogin);
 });
