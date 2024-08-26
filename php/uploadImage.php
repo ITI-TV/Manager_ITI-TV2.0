@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Controlla che il file sia un'immagine
         $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
-        $allowedTypes = array('jpg', 'jpeg', 'png', 'gif');
+        $allowedTypes = array('jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'bmp', 'ico', 'tiff', 'tif', 'psd', 'raw', 'psp', 'heic');
 
         if (in_array(strtolower($fileType), $allowedTypes)) {
             // Sposta il file caricato nella cartella di destinazione
