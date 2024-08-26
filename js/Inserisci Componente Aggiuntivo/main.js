@@ -1,6 +1,6 @@
 function startInserimentoComponenteAggiuntivo() {
     //inserisco il nome del prof nel box di firma
-    document.getElementById('ProfComponentiAggiuntivi').innerHTML = document.getElementById('username').value;
+    document.getElementById('ProfComponentiAggiuntivi').innerHTML = username;
     //ascolto formTitoloComponentiAggiuntivi quando scrivo
     document.getElementById('formTitoloComponentiAggiuntivi').addEventListener('input', checkLunghezzaTitolo);
     //ascolto formCorpoComponentiAggiuntivi quando scrivo
@@ -83,7 +83,7 @@ function invioComponenteAggiuntivo(){
             }
 
             // Salvo l'immagine nella cartella giusta
-            let firmaComponenteAggiuntivo = document.getElementById('username').value;
+            let firmaComponenteAggiuntivo = username;
             let formData = new FormData();
             formData.append('file', document.getElementById('formImmagineComponentiAggiuntivi').files[0]);
 

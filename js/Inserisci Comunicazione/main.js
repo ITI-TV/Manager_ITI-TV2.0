@@ -167,7 +167,7 @@ function InserisciComunicazione(){
             }
             else{
                 //contatto setters.php con action setComm e con tutti i parametri
-                let firma = document.getElementById('username').value;
+                let firma = username;
                 $.post('php/setters.php', {
                     action: 'setComm',
                     Titolo: document.getElementById('TitoloComunicazione').value,
@@ -210,7 +210,7 @@ function InserisciComunicazione(){
 
 function checkInfoComm() {
     document.getElementById('CorpoComunicazioneAnteprima').innerHTML = '';
-    document.getElementById('FirmaComunicazioneAnteprima').innerHTML = document.getElementById('username').value;
+    document.getElementById('FirmaComunicazioneAnteprima').innerHTML = username;
     //controllo che il box NumeroComunicazione quando modificato quanto è grande il numero e che non sia maggione di 9999 o minore di 1
     document.getElementById('NumeroComunicazione').addEventListener('input', checkNumeroComunicazione);
     //controllo che il box TitoloComunicazione quando modificato che non sia maggione di 55 o minore di 1
@@ -277,7 +277,7 @@ function InserisciNews(){
             }
             else{
                 //contatto setters.php con action setNews e con tutti i parametri
-                let firma = document.getElementById('username').value;
+                let firma = username;
                 $.post('php/setters.php', {
                     action: 'setNews',
                     Corpo: document.getElementById('CorpoComunicazione').value,
@@ -341,7 +341,7 @@ function InserisciEmerg(){
             }
             else{
                 //contatto setters.php con action setEmerg e con tutti i parametri
-                let firma = document.getElementById('username').value;
+                let firma = username;
                 $.post('php/setters.php', {
                     action: 'setEmergenza',
                     Corpo: document.getElementById('CorpoComunicazione').value,
