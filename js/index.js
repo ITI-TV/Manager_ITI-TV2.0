@@ -73,14 +73,16 @@ function setupNavigation() {
         //mostro il menu se è nascosto
         if (document.getElementById('boxInfo').style.display === 'none') {
             document.getElementById('boxInfo').style.display = 'block';
+            document.getElementById('userbox').classList.add('userboxClicked');
         } else {
             //altrimenti lo nascondo
             document.getElementById('boxInfo').style.display = 'none';
+            document.getElementById('userbox').classList.remove('userboxClicked');
         }
     });
     //aggiungo un ascolto se viene premuto il tasto logout
     document.getElementById('logout').addEventListener('click', handleLogout);
-    document.getElementById('usernameUserbox').innerHTML = 'Buongiorno ' + username;
+    document.getElementById('usernameUserbox').innerHTML = 'Buongiorno <br>' + username;
 }
 
 function showLoggedInState() {

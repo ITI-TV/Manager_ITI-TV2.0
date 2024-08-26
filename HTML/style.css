@@ -25,32 +25,172 @@
     src: url(/Fonts/Inter/Inter-VariableFont_slnt,wght.ttf) format("truetype");
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /*GRAFICA BASE*/
+header{
+    height: 7.1875rem;
+    width: 100%;
+    flex-shrink: 0;
+    background: #004996;
+}
+#Titolo{
+    position: absolute;
+    color: #FF2626;
+    text-align: center;
+    -webkit-text-stroke-width: 1.25px;
+    -webkit-text-stroke-color: #000;
+    font-family: OutFit;
+    font-size: 4.375rem;
+    font-style: normal;
+    font-weight: 735;
+    line-height: normal;
+    top: 15px;
+    width: 100%;
+}
+
+body{
+    background: #04326F;
+}
+
 #userbox{
     position: absolute;
-    top: 20px;
-    left: 95%;
-    border-radius: 50%;
+    top: 0.44rem;
+    right: 10px;
     border: 1px solid black;
-    width: 50px;
-    height: 50px;
+    width: 6.25rem;
+    height: 6.25rem;
     text-align: center;
-    background-color: darkblue;
+    background: #04326F;
     cursor: pointer;
+    border-radius: 0.9375rem 0.9375rem 0.9375rem 0.9375rem;
+    background-image: url("../img/UI/user.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.userboxClicked{
+    border-radius: 15px 15px 0px 0px;
+    background: #479CFF;
+    background-image: url("../img/UI/user-hover.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 #boxInfo{
     position: absolute;
-    top: 50px;
-    background-color: blue;
+    width: 270px;
+    height: 150px;
+    flex-shrink: 0;
+    top: 100px;
+    right: 1px;
+    border-radius: 15px 0px 15px 15px;
+    background: #479CFF;
 }
 
 #logout{
+    /*Testo*/
+    color: #FBFBFB;
+    text-align: center;
+    font-family: Outfit;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    width: 250px;
+    height: 56px;
+    margin-left: 4%;
+    border-radius: 5px;
+    border: 1px solid #EFEFEF;
+    background: #04326F;
     cursor: pointer;
+
 }
 
 #logout:hover{
-    background-color: red;
+    background-color: #FF2626;
+}
+
+#usernameUserbox{
+    margin-top: 500px;
+    color: #F4F4F4;
+    text-align: center;
+    font-family: Outfit;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+/*NAVBAR*/
+nav{
+    width: 100%;
+    height: 96px;
+    margin-top: 10px;
+    flex-shrink: 0;
+    border-radius: 0px 0px 24px 24px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #005CD7;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+ul{
+    display: flex;
+    height: 58px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 20px;
+    color: #FFF;
+    text-align: center;
+    font-family: Outfit;
+    font-size: 24px;
+    font-style: normal;
+
+    font-weight: 735;
+    line-height: normal;
+    list-style: none;
+}
+
+a{
+    background: #04326F;
+    color: #FFF;
+    text-align: center;
+    font-family: Outfit,sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    padding: 20px 10px;
+    display: block;
+    font-weight: 735;
+    line-height: normal;
+    list-style: none;
+    margin-inline-end: 0px;
+
+    text-decoration: none;
+}
+a:hover{
+    color: #000;
+    background: #479BFF;
+}
+
+.active{
+    background: #479BFF;
+    color: #000 ;
+}
+#home{
+    background-image: url(../img/UI/home.png);
+}
+
+#home:hover{
+    background-image: url(../img/UI/home-hover.png);
 }
 
 /*GRAFICA INSERIMENTO COMUNICAZIONE*/
