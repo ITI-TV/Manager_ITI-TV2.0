@@ -2,7 +2,7 @@ function startVisualizzazioneComponenteAggiuntivo(){
     fetch('php/getters.php?action=getComponentiAggiuntivi')
         .then(response => response.json())
         .then(data => {
-            for (let i=3; i<data.length; i++){
+            for (let i=0; i<data.length; i++){
                 let riga = document.createElement('tr');
                 let titoloComponenteAggiuntivo = document.createElement('td');
                 let corpoComponenteAggiuntivo = document.createElement('td');

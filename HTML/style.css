@@ -847,7 +847,7 @@ td, tr, th {
 
 /* COMPONENTI AGGIUNTIVI*/
 
-#AnteprimaComponente {
+#AnteprimaComponente{
     width: 100%;
     max-width: 1284.804px;
     height: 700.167px;
@@ -1137,4 +1137,11 @@ td, tr, th {
     width: 48%; /* Adjust the width as needed */
     padding: 10px; /* Optional: Add padding for content spacing */
     box-sizing: border-box; /* Ensures padding and border are included in the width */
+
+    color: #FFF;
+    font-family: OutFit,sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 735;
+    line-height: normal;
 }

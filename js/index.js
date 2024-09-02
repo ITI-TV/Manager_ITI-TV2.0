@@ -43,6 +43,7 @@ function loadContent(page) {
                 'visualizza-comunicazioni': 'HTML/VisualizzaComunicazioni/main.html',
                 'visualizza-componenti': 'HTML/VisualizzaComponentiAggiuntivi/main.html',
                 'eventi-giornalieri': 'HTML/VisualizzaModificaEventiGiornalieri/main.html',
+                'informazioni-generali': 'HTML/Informazioni Generali/main.html',
                 'contatti': 'HTML/Contatti/main.html'
             };
 
