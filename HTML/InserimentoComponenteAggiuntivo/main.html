@@ -1,4 +1,4 @@
-<div id="AnteprimaEventoGiornaliero">
+<div id="AnteprimaComponente">
     <div id="boxImmagineComponentiAggiuntivi">
         <img id="ImmagineComponentiAggiuntivi" src="#" alt="Nessuna immagine disponibile">
     </div>
@@ -10,17 +10,35 @@
         <div id="ProfComponentiAggiuntivi"></div>
     </div>
 </div>
+
 <div id="boxFormComponentiAggiuntivi">
-    <label for="formTitoloComponentiAggiuntivi" id="textFormTitoloComponentiAggiuntivi">0/100</label>
+
+
     <input type="text" id="formTitoloComponentiAggiuntivi" name="TitoloComponentiAggiuntivi" placeholder="Titolo">
-    <label for="formTestoComponentiAggiuntivi" id="textFormTestoComponentiAggiuntivi">0/625</label>
+    <label for="formTitoloComponentiAggiuntivi" id="textFormTitoloComponentiAggiuntivi">0/100</label>
+
+
     <textarea id="formTestoComponentiAggiuntivi" name="TestoComponentiAggiuntivi" placeholder="Corpo"></textarea>
-    <label for="formDataInizioComponentiAggiuntivi" id="textFormDataInizioComponentiAggiuntivi">Data Inizio</label>
-    <input type="date" id="formDataInizioComponentiAggiuntivi" name="DataInizioComponentiAggiuntivi">
-    <label for="formDataFineComponentiAggiuntivi" id="textFormDataFineComponentiAggiuntivi">Data Fine</label>
-    <input type="date" id="formDataFineComponentiAggiuntivi" name="DataFineComponentiAggiuntivi">
-    <label for="formImmagineComponentiAggiuntivi">Immagine</label>
-    <input type="file" id="formImmagineComponentiAggiuntivi" name="ImmagineComponentiAggiuntivi" accept="image/*">
-    <button type="submit" id="submitComponenteAggiuntivo">Invia</button>
+    <label for="formTestoComponentiAggiuntivi" id="textFormTestoComponentiAggiuntivi">0/625</label>
+    <div class="form-group">
+        <label for="formDataInizioComponentiAggiuntivi" id="textFormDataInizioComponentiAggiuntivi">Data Inizio</label>
+        <input type="date" id="formDataInizioComponentiAggiuntivi" name="DataInizioComponentiAggiuntivi">
+    </div>
+
+    <div class="form-group">
+        <label for="formDataFineComponentiAggiuntivi" id="textFormDataFineComponentiAggiuntivi">Data Fine</label>
+        <input type="date" id="formDataFineComponentiAggiuntivi" name="DataFineComponentiAggiuntivi">
+    </div>
+
+    <div class="form-group">
+        <label for="formImmagineComponentiAggiuntivi" id="textFormImmagineComponentiAggiuntivi">Immagine </label>
+        <label id="upload"><input type="file" id="formImmagineComponentiAggiuntivi" name="ImmagineComponentiAggiuntivi" accept="image/*" hidden=""></label>
+    </div>
+
+    <div class="form-group">
+        <div id="Azioni2">Azioni</div>
+        <button type="submit" id="submitComponenteAggiuntivo"></button>
+    </div>
 </div>
+
 <script src="js/Inserisci%20Componente%20Aggiuntivo/main.js"></script>

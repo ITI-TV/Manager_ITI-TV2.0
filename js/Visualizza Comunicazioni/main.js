@@ -13,7 +13,9 @@ function startVisualizzazioneComunicazioni(){
                 let profComunicazione = document.createElement('td');
                 let azioniComunicazione = document.createElement('td');
                 let visualizza = document.createElement('button');
-                visualizza.innerText = 'Visualizza';
+                //aggiungo classe a visualizza
+                visualizza.classList.add('BottoneVisualizzaComunicazione');
+                visualizza.innerHTML = '<img src="img/UI/occhio.png" alt="Visualizza">';
                 visualizza.addEventListener('click', function(){
                     if(data[i]['Tag'] === 'comunicazione') {
                         let NumeroComunicazioneAnteprima = document.getElementById('NumeroVisualizzazioneComunicazioneAnteprima');

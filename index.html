@@ -21,13 +21,13 @@
 <div id="loginContainer">
     <form id="loginForm">
         <input type="hidden" id="csrf_token" name="csrf_token">
-        <label for="username">Username:</label>
+        <label for="username" class="loginLabel">USERNAME</label> <br>
         <input type="text" id="username" name="username" required><br><br>
 
-        <label for="password">Password:</label>
+        <label for="password" class="loginLabel">PASSWORD</label> <br>
         <input type="password" id="password" name="password" required><br><br>
 
-        <button type="submit">Accedi</button>
+        <button type="submit" id="loginButton">Accedi</button>
     </form>
     <p id="result"></p>
 </div>
@@ -36,9 +36,10 @@
     <div id="mainContent"></div>
 </div>
 <div id="footer">
-    <p>Realizzato da Samuele Marinelli & Gabriele Bovina <br>
+    <p id="testFooter"> Realizzato da Samuele Marinelli & Gabriele Bovina <br>
         Classe 4°X A.S 2023/2024</p>
-    <img src="img/Immagini%20Sito/logoiti%20.png" alt="logoITI">
+    <img src="img/Immagini Sito/logoITITV.png" id="logoTV" alt="LogoITI-TV">
+    <img src="img/Immagini%20Sito/logoiti%20.png" alt="logoITI" id="logoIti">
 </div>
 <script src="js/index.js"></script>
 </body>

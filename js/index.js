@@ -49,7 +49,7 @@ function loadContent(page) {
             const url = contentMap[page] || contentMap['home'];
 
             $('#mainContent').load(url, function(response, status, xhr) {
-                //do la clase active alla pagina selezionata
+                //do la classe active alla pagina selezionata
                 $('#navbar a').removeClass('active');
                 $(`#navbar a[data-page="${page}"]`).addClass('active');
                 if (status === 'error') {
@@ -68,6 +68,8 @@ function setupNavigation() {
             loadContent(page);
         }
     });
+    //sistemo la classe del userbox
+    document.getElementById('userbox').classList.add('normalUserBox');
     //ascolto se userbox è cliccato
     document.getElementById('userbox').addEventListener('click', function() {
         //mostro il menu se è nascosto

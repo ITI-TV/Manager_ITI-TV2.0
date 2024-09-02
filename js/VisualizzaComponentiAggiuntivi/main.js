@@ -11,7 +11,8 @@ function startVisualizzazioneComponenteAggiuntivo(){
                 let profComponenteAggiuntivo = document.createElement('td');
                 let azioniComponenteAggiuntivo = document.createElement('td');
                 let visualizza = document.createElement('button');
-                visualizza.innerText = 'Visualizza';
+                visualizza.classList.add('BottoneVisualizzaComunicazione');
+                visualizza.innerHTML = '<img src="../img/UI/occhio.png"> ';
                 visualizza.addEventListener('click', function(){
                     let TitoloComponenteAggiuntivo = document.getElementById('TitoloComponentiAggiuntivi');
                     let CorpoComponenteAggiuntivo = document.getElementById('TestoComponentiAggiuntivi');
