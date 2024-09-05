@@ -1,6 +1,5 @@
 <?php
 session_start();
-//se action è setComm predo le info di NumeroComunicazione, TitoloComunicazione, CorpoComunicazione, InizioComunicazione, FineComunicazione e lo carico sul DB nella tabella Comunicazioni
 if($_POST['action'] == 'setComm'){
     $NumeroComunicazione = $_POST['Numero'];
     $TitoloComunicazione = $_POST['Titolo'];
@@ -22,7 +21,6 @@ if($_POST['action'] == 'setComm'){
         $stmt->execute();
         $result = $stmt->get_result();
         if ($result->num_rows > 0) {
-            //output in json
             echo json_encode(["success" => false, "message" => "Comunicazione già presente"]);
             exit;
         }

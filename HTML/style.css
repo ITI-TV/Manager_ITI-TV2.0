@@ -1118,7 +1118,7 @@ td, tr, th {
     overflow-x: auto; /* Attiva lo scorrimento orizzontale */
     margin-left: 20px; /* Aggiungi un po' di padding per evitare che il contenuto tocchi il bordo */
     position: absolute;
-    bottom: 570px;
+    bottom: 530px;
 }
 
 #TabellaComponentiAggiuntivi{

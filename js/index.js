@@ -43,7 +43,7 @@ function loadContent(page) {
                 'visualizza-comunicazioni': 'HTML/VisualizzaComunicazioni/main.html',
                 'visualizza-componenti': 'HTML/VisualizzaComponentiAggiuntivi/main.html',
                 'eventi-giornalieri': 'HTML/VisualizzaModificaEventiGiornalieri/main.html',
-                'informazioni-generali': 'HTML/Informazioni Generali/main.html',
+                'informazioni-generali': 'HTML/InformazioniGenerali/main.html',
                 'contatti': 'HTML/Contatti/main.html'
             };
 
@@ -146,7 +146,7 @@ function handleLogin(e) {
                         showLoginForm();
                     });
             } else {
-                $('#result').text(data.message);
+                alert(data.message);
                 window.location.reload();
             }
         },

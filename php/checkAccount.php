@@ -14,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // Connessione al database prendendo le info da infoAccess.php
     require "infoAccess.php";
     $db = new mysqli($serverConn, $usernameConn, $passwordConn, $dbnameConn);
 
@@ -23,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Preparazione della query
     $stmt = $db->prepare("SELECT password FROM utenti WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
@@ -33,7 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         $hashed_password = $row['password'];
 
-        // Verifica della password
         if (password_verify($password, $hashed_password)) {
             $_SESSION['user_logged_in'] = true;
             $_SESSION['username'] = $username;

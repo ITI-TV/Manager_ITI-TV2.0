@@ -1,5 +1,4 @@
 <?php
-//facico partire la sessio
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -8,19 +7,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $fileName = $_SESSION['username'] . '_' . time() . '_' . $_FILES['file']['name'];
         $targetFilePath = $uploadDirectory . $fileName;
 
-        // Assicurati che la cartella esista
         if (!is_dir($uploadDirectory)) {
             mkdir($uploadDirectory, 0777, true);
         }
 
-        // Controlla che il file sia un'immagine
         $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
         $allowedTypes = array('jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'bmp', 'ico', 'tiff', 'tif', 'psd', 'raw', 'psp', 'heic');
 
         if (in_array(strtolower($fileType), $allowedTypes)) {
-            // Sposta il file caricato nella cartella di destinazione
             if (move_uploaded_file($_FILES['file']['tmp_name'], $targetFilePath)) {
-                // Restituisce il percorso del file caricato
                 echo "IMG/Componenti Aggiuntivi/" . $fileName;
             } else {
                 http_response_code(500);
@@ -38,4 +33,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     http_response_code(405);
     echo 'Metodo non consentito.';
 }
-?>

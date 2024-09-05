@@ -15,7 +15,6 @@ if(isset($_GET['action']) && $_GET['action'] == "getComunicazioni"){
     }
     $stmt->close();
     $db->close();
-    //echo solo di comunicazioni non come json
     echo json_encode($comunicazioni);
 }else if($_GET['action'] == "getContatti") {
     require "infoAccess.php";
