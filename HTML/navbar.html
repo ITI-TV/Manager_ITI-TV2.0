@@ -1,13 +1,179 @@
-
-<nav>
-    <ul>
-        <li><a href="#" data-page="home" style="border-radius: 15px 0 0 15px;padding: 20px 10px">Home</a></li>
-        <li><a href="#" data-page="inserimento-comunicazione">Nuova Comunicazione </a></li>
-        <li><a href="#" data-page="inserimento-componente">Nuovo Componente Aggiuntivo </a></li>
-        <li><a href="#" data-page="visualizza-comunicazioni">Visualizza Comunicazioni </a></li>
-        <li><a href="#" data-page="visualizza-componenti">Visualizza Componenti Aggiuntivi </a></li>
-        <li><a href="#" data-page="eventi-giornalieri">Eventi Giornalieri</a></li>
-        <li><a href="#" data-page="informazioni-generali">Informazioni Generali</a></li>
-        <li><a href="#" data-page="contatti" style="border-radius: 0 15px 15px 0; padding: 20px 10px">Contatti</a></li>
-    </ul>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" id="mainNavbar">
+    <div class="container" id="containerNavbar">
+        <button class="navbar-toggler" id="hamburgerButton" type="button" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" data-page="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="inserimento-comunicazione">Nuova Comunicazione</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="inserimento-componente">Nuovo Componente Aggiuntivo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="visualizza-comunicazioni">Visualizza Comunicazioni</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="visualizza-componenti">Visualizza Componenti Aggiuntivi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="eventi-giornalieri">Eventi Giornalieri</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="informazioni-generali">Informazioni Generali</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="contatti">Contatti</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
+
+
+<!-- Stili CSS -->
+<style>
+    /* Navbar stili per schermi grandi */
+    .navbar {
+        width: 100%;
+        background-color: #005cd7;
+        /* Sfondo della navbar per schermi grandi */
+        z-index: 1000;
+    }
+
+    #hamburgerButton {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: transparent;
+        border: none;
+        z-index: 1000;
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+    .collapse.show {
+        background-color: rgba(0, 0, 0, 0.9);
+        /* Sfondo scuro quando il menu è visibile */
+        position: fixed;
+        top: 60px;
+        right: 20px;
+        width: 100vw;
+        /* Occupa tutta la larghezza dello schermo */
+        max-width: 400px;
+        /* Limita la larghezza massima del menu */
+        z-index: 1000;
+        transition: transform 0.3s ease;
+        /* Transizione per effetto slide-in */
+        transform: translateX(100%);
+        /* Nascondi il menu inizialmente */
+    }
+
+    .collapse.show.show-menu {
+        transform: translateX(0);
+        /* Mostra il menu quando è visibile */
+    }
+
+    #containerNavbar {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 2000px;
+        /* Centra i bottoni nella navbar */
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        gap: 10px;
+        /* Spazio tra i bottoni */
+        width: 100%;
+        /* Occupa tutta la larghezza del menu */
+    }
+
+    .nav-item {
+        flex: 1;
+        /* Ogni bottone occupa lo spazio equamente */
+    }
+
+    .nav-link {
+        color: white !important;
+        background-color: #04326f;
+        /* Sfondo del bottone */
+        padding: 10px;
+        border-radius: 0.25rem;
+        text-align: center;
+        /* Allinea il testo al centro orizzontalmente */
+        display: flex;
+        align-items: center;
+        /* Allinea il testo al centro verticalmente */
+        justify-content: center;
+        /* Allinea il testo al centro orizzontalmente */
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        width: 100%;
+        /* Larghezza del bottone riempie la colonna */
+        height: 80px;
+        /* Altezza del bottone */
+        box-sizing: border-box;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+        background-color: #479bff;
+        /* Sfondo del bottone al passaggio del cursore o selezionato */
+    }
+
+    .nav-link.active {
+        background-color: #479bff;
+        /* Sfondo del bottone attivo */
+    }
+
+    /* Navbar per schermi piccoli */
+    @media (max-width: 992px) {
+        .navbar {
+            background-color: transparent;
+            /* Sfondo trasparente per schermi piccoli */
+        }
+
+        #hamburgerButton {
+            position: fixed;
+            top: 70px;
+            right: 10px;
+            background: transparent;
+            border: none;
+        }
+
+        .navbar-nav {
+            text-align: right;
+        }
+
+        .collapse.show {
+            background-color: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            top: 60px;
+            right: 20px;
+            width: 200px;
+            /* Imposta la larghezza del menu per schermi piccoli */
+            transform: translateX(100%);
+            /* Nascondi il menu inizialmente */
+            transition: transform 0.3s ease;
+            /* Transizione per effetto slide-in */
+        }
+
+        .collapse.show.show-menu {
+            transform: translateX(0);
+            /* Mostra il menu quando è visibile */
+        }
+    }
+</style>
