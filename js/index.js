@@ -92,7 +92,7 @@ function setupNavigation() {
 }
 
 function showLoggedInState() {
-    $('#loginContainer').hide();
+    document.getElementById('mainContentLogin').classList.add('minimizzato');
     $('#appContent').show();
     loadNavbar();
     loadContent('home');
