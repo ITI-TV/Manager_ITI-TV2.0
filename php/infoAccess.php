@@ -1,5 +1,5 @@
 <?php
-$serverConn="192.168.1.147";
+$serverConn="localhost";
 $usernameConn="ititv";
 $passwordConn="ititv";
 $dbnameConn="ititv";
