@@ -29,7 +29,7 @@
                     <a class="nav-link" href="#" data-page="informazioni-generali">Informazioni Generali</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" data-page="contatti">Contatti</a>
+                    <a class="nav-link" href="#" data-page="contatti" id="contatti">Contatti</a>
                 </li>
             </ul>
         </div>
@@ -57,12 +57,15 @@
     }
 
 
+<<<<<<< Updated upstream
     .navbar-toggler-icon {
         background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
+=======
+>>>>>>> Stashed changes
 
     .collapse.show {
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: #005CD7;
         /* Sfondo scuro quando il menu è visibile */
         position: absolute;
         top: 60px;
@@ -115,7 +118,6 @@
         background-color: #04326f;
         /* Sfondo del bottone */
         padding: 10px;
-        border-radius: 0.25rem;
         text-align: center;
         /* Allinea il testo al centro orizzontalmente */
         display: flex;
@@ -143,10 +145,18 @@
         /* Sfondo del bottone attivo */
     }
 
+<<<<<<< Updated upstream
     @media (min-width: 1400px) {
         .nav-item {
             flex: 1;
         }
+=======
+    #home{
+        border-radius: 15px 0px 0px 15px;
+    }
+    #contatti{
+        border-radius: 0px 15px 15px 0px;
+>>>>>>> Stashed changes
     }
 
     /* Navbar per schermi piccoli */
@@ -155,6 +165,7 @@
             background-color: transparent;
             /* Sfondo trasparente per schermi piccoli */
         }
+
 
         #hamburgerButton {
             position: absolute;
@@ -168,8 +179,13 @@
             text-align: right;
         }
 
+        #home
+        #contatti{
+            border: radius 0 0 0 0;
+        }
+
         .collapse.show {
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: #005CD7;
             position: absolute;
             top: 0px;
             right: 80px;
@@ -189,7 +205,7 @@
         .nav-link {
             /* Rettangoli con bordo nero sottile */
             border: 1px solid black;
-            border-radius: 0px;
+            border-radius: 2px;
 
         }
 
@@ -211,7 +227,7 @@
         }
 
         .collapse.show {
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: #005CD7;
             position: absolute;
             top: 0px;
             right: 50px;
@@ -221,6 +237,11 @@
             /* Nascondi il menu inizialmente */
             transition: transform 0.3s ease;
             /* Transizione per effetto slide-in */
+        }
+
+        #home
+        #contatti{
+            border: radius 0 0 0 0;
         }
     }
 
@@ -234,7 +255,7 @@
         }
 
         .collapse.show {
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: #005CD7;
             position: absolute;
             top: 0px;
             right: 40px;
@@ -244,6 +265,11 @@
             /* Nascondi il menu inizialmente */
             transition: transform 0.3s ease;
             /* Transizione per effetto slide-in */
+        }
+
+        #home
+        #contatti{
+            border: radius 0 0 0 0;
         }
     }
 </style>
