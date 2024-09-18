@@ -1,44 +1,176 @@
-<div id="AnteprimaComponente">
-    <div id="boxImmagineComponentiAggiuntivi">
-        <img id="ImmagineComponentiAggiuntivi" src="#" alt="Nessuna immagine disponibile">
-    </div>
-    <div id="boxHeaderComponentiAggiuntivi">
-        <div id="TitoloComponentiAggiuntivi"></div>
-    </div>
-    <div id="TestoComponentiAggiuntivi"></div>
-    <div id="boxProfComponentiAggiuntivi">
-        <div id="ProfComponentiAggiuntivi"></div>
-    </div>
-</div>
+<div id="ContainerComponentiAggiuntivi" class="container-fluid">
+    <div class="row">
+        <!-- Form Componenti Aggiuntivi -->
+        <div id="FormComponentiAggiuntivi" class="col-lg-4 col-md-12">
+            <div class="form-group">
+                <label for="formTitoloComponentiAggiuntivi">Titolo</label>
+                <input type="text" id="formTitoloComponentiAggiuntivi" name="TitoloComponentiAggiuntivi"
+                    class="form-control" placeholder="Titolo">
+                <label for="formTitoloComponentiAggiuntivi" id="textFormTitoloComponentiAggiuntivi">0/100</label>
+            </div>
 
-<div id="boxFormComponentiAggiuntivi">
+            <div class="form-group">
+                <label for="formTestoComponentiAggiuntivi">Corpo</label>
+                <textarea id="formTestoComponentiAggiuntivi" name="TestoComponentiAggiuntivi" class="form-control"
+                    placeholder="Corpo"></textarea>
+                <label for="formTestoComponentiAggiuntivi" id="textFormTestoComponentiAggiuntivi">0/625</label>
+            </div>
 
+            <div class="form-group">
+                <label for="formDataInizioComponentiAggiuntivi">Data Inizio</label>
+                <input type="date" id="formDataInizioComponentiAggiuntivi" name="DataInizioComponentiAggiuntivi"
+                    class="form-control">
+            </div>
 
-    <input type="text" id="formTitoloComponentiAggiuntivi" name="TitoloComponentiAggiuntivi" placeholder="Titolo">
-    <label for="formTitoloComponentiAggiuntivi" id="textFormTitoloComponentiAggiuntivi">0/100</label>
+            <div class="form-group">
+                <label for="formDataFineComponentiAggiuntivi">Data Fine</label>
+                <input type="date" id="formDataFineComponentiAggiuntivi" name="DataFineComponentiAggiuntivi"
+                    class="form-control">
+            </div>
 
+            <div class="form-group">
+                <label for="formImmagineComponentiAggiuntivi">Immagine</label>
+                <label id="upload">
+                    <input type="file" id="formImmagineComponentiAggiuntivi" name="ImmagineComponentiAggiuntivi"
+                        accept="image/*" hidden>
+                </label>
+            </div>
 
-    <textarea id="formTestoComponentiAggiuntivi" name="TestoComponentiAggiuntivi" placeholder="Corpo"></textarea>
-    <label for="formTestoComponentiAggiuntivi" id="textFormTestoComponentiAggiuntivi">0/625</label>
-    <div class="form-group">
-        <label for="formDataInizioComponentiAggiuntivi" id="textFormDataInizioComponentiAggiuntivi">Data Inizio</label>
-        <input type="date" id="formDataInizioComponentiAggiuntivi" name="DataInizioComponentiAggiuntivi">
-    </div>
+            <div class="form-group">
+                <div id="Azioni2">Azioni</div>
+                <button type="submit" id="submitComponenteAggiuntivo" class="btn btn-primary">
+                    <img src="img/UI/add.png" alt="Aggiungi">
+                </button>
+            </div>
+        </div>
 
-    <div class="form-group">
-        <label for="formDataFineComponentiAggiuntivi" id="textFormDataFineComponentiAggiuntivi">Data Fine</label>
-        <input type="date" id="formDataFineComponentiAggiuntivi" name="DataFineComponentiAggiuntivi">
-    </div>
-
-    <div class="form-group">
-        <label for="formImmagineComponentiAggiuntivi" id="textFormImmagineComponentiAggiuntivi">Immagine </label>
-        <label id="upload"><input type="file" id="formImmagineComponentiAggiuntivi" name="ImmagineComponentiAggiuntivi" accept="image/*" hidden=""></label>
-    </div>
-
-    <div class="form-group">
-        <div id="Azioni2">Azioni</div>
-        <button type="submit" id="submitComponenteAggiuntivo"></button>
+        <!-- Anteprima Componenti Aggiuntivi -->
+        <div id="AnteprimaComponentiAggiuntivi" class="col-lg-8 col-md-12">
+            <div id="boxHeaderComponentiAggiuntivi">
+                <div id="TitoloComponentiAggiuntivi"></div>
+            </div>
+            <div id="boxImmagineComponentiAggiuntivi">
+                <img id="ImmagineComponentiAggiuntivi" src="#" alt="Nessuna immagine disponibile">
+            </div>
+            <div id="TestoComponentiAggiuntivi"></div>
+            <div id="boxProfComponentiAggiuntivi">
+                <div id="ProfComponentiAggiuntivi"></div>
+            </div>
+        </div>
     </div>
 </div>
 
 <script src="js/Inserisci%20Componente%20Aggiuntivo/main.js"></script>
+<style>
+    /* Stili per il contenitore principale */
+    #ContainerComponentiAggiuntivi {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    /* Stili per il form */
+    #FormComponentiAggiuntivi {
+        padding: 20px;
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        height: 100%;
+    }
+
+    /* Stili per l'anteprima */
+    #AnteprimaComponentiAggiuntivi {
+        position: relative;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+    }
+
+    /* Stili per l'intestazione dell'anteprima */
+    #boxHeaderComponentiAggiuntivi {
+        width: 100%;
+        height: 91px;
+        background-color: #004996;
+        border-radius: 15px 15px 0 0;
+        border-bottom: 2px solid #33B4FE;
+        box-sizing: border-box;
+        color: #FFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'OutFit', sans-serif;
+        font-size: 34px;
+        font-weight: 550;
+    }
+
+    /* Stili per l'immagine dell'anteprima */
+    #boxImmagineComponentiAggiuntivi {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        border: 1px solid #E09819;
+        background: #004083;
+        margin-top: 20px;
+    }
+
+    #ImmagineComponentiAggiuntivi {
+        max-width: 90%;
+        max-height: 90%;
+        width: auto;
+        height: auto;
+    }
+
+    /* Stili per il testo dell'anteprima */
+    #TestoComponentiAggiuntivi {
+        margin-top: 20px;
+        color: #FFF;
+        font-family: 'OutFit', sans-serif;
+        font-size: 28px;
+        font-weight: 300;
+    }
+
+    /* Stili per la sezione profilo dell'anteprima */
+    #boxProfComponentiAggiuntivi {
+        width: 100%;
+        height: 41px;
+        background: #004996;
+        border-radius: 0 0 15px 15px;
+        border-top: 2.5px solid #E09819;
+        margin-top: 20px;
+        color: #FFF;
+        text-align: right;
+        font-family: 'OutFit', sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        padding-right: 20px;
+    }
+
+    /* Responsività */
+    @media (max-width: 992px) {
+
+        #FormComponentiAggiuntivi,
+        #AnteprimaComponentiAggiuntivi {
+            margin-bottom: 20px;
+        }
+
+        #AnteprimaComponentiAggiuntivi {
+            order: 2;
+        }
+
+        #FormComponentiAggiuntivi {
+            order: 1;
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        #TestoComponentiAggiuntivi,
+        #boxImmagineComponentiAggiuntivi {
+            width: 100%;
+        }
+    }
+</style>
