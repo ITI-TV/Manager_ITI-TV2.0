@@ -1,45 +1,87 @@
 <div class="container-fluid">
     <div class="row">
         <!-- Form di Inserimento -->
-        <div id="FormInserimentoComunicazione" class="col-lg-4 col-md-12">
-            <div class="form-group">
-                <label for="TagComunicazione" id="TagComunicazioneLabel">TAG</label>
-                <select id="TagComunicazione" class="form-control">
-                    <option value="niente">Seleziona un'opzione</option>
-                    <option value="Comunicazione">Comunicazione</option>
-                    <option value="News">News</option>
-                    <option value="Emergenza">Emergenza</option>
-                </select>
-            </div>
+        <div id="FormInserimentoComunicazione" class="col-lg-4 col-md-12"> 
 
-            <div class="form-group">
-                <label for="NumeroComunicazione" id="labelNumeroComunicazione">Numero</label>
-                <input type="number" id="NumeroComunicazione" class="form-control" required min="1" max="9999">
+            <!-- TAG -->
+            <div class="form-row align-items-center">
+                <div class="col-auto">
+                    <label for="TagComunicazione" id="TagComunicazioneLabel">TAG</label>
+                </div>
+                <div class="col">
+                    <select id="TagComunicazione" class="form-control">
+                        <option value="niente">Seleziona un'opzione</option>
+                        <option value="Comunicazione">Comunicazione</option>
+                        <option value="News">News</option>
+                        <option value="Emergenza">Emergenza</option>
+                    </select>
+                </div>
             </div>
-
-            <br>
-            <input type="text" id="TitoloComunicazione" class="form-control" max="55" min="1" placeholder="Titolo">
-            <label for="TitoloComunicazione" id="labelTitoloComunicazione">0/55</label>
-            <br>
-            <textarea id="CorpoComunicazione" class="form-control" max="300" min="1" placeholder="Corpo"></textarea>
-            <label for="CorpoComunicazione" id="labelCorpoComunicazione">0/300</label>
-
-            <div class="form-group">
-                <label for="DataInizioComunicazione" id="labelDataInizioComunicazione">Data Inizio</label>
-                <input type="date" id="DataInizioComunicazione" class="form-control" required>
+        
+            <!-- Numero -->
+            <div class="form-row align-items-center mt-2">
+                <div class="col-auto">
+                    <label for="NumeroComunicazione" id="labelNumeroComunicazione">Numero</label>
+                </div>
+                <div class="col">
+                    <input type="number" id="NumeroComunicazione" class="form-control" required min="1" max="9999">
+                </div>
             </div>
-
-            <div class="form-group">
-                <label for="DataFineComunicazione" id="labelDataFineComunicazione">Data Fine</label>
-                <input type="date" id="DataFineComunicazione" class="form-control" required>
+        
+            <!-- Titolo -->
+            <div class="form-row align-items-center mt-2">
+                <div class="col">
+                    <input type="text" id="TitoloComunicazione" class="form-control" max="55" min="1" placeholder="Titolo">
+                </div>
+                <div class="col-auto">
+                    <label for="TitoloComunicazione" id="labelTitoloComunicazione">0/55</label>
+                </div>
             </div>
-
-            <div class="form-group">
-                <div id="Azioni">Azioni</div>
-                <button id="InserisciComunicazione" class="btn btn-primary"><img src="img/UI/add.png"
-                        alt="Inserisci"></button>
+        
+            <!-- Corpo -->
+            <div class="form-row align-items-center mt-2">
+                <div class="col">
+                    <textarea id="CorpoComunicazione" class="form-control" max="300" min="1" placeholder="Corpo"></textarea>
+                </div>
+                <div class="col-auto">
+                    <label for="CorpoComunicazione" id="labelCorpoComunicazione">0/300</label>
+                </div>
             </div>
+        
+            <!-- Data Inizio -->
+            <div class="form-row align-items-center mt-2">
+                <div class="col-auto">
+                    <label for="DataInizioComunicazione" id="labelDataInizioComunicazione">Data Inizio</label>
+                </div>
+                <div class="col">
+                    <input type="date" id="DataInizioComunicazione" class="form-control" required>
+                </div>
+            </div>
+        
+            <!-- Data Fine -->
+            <div class="form-row align-items-center mt-2">
+                <div class="col-auto">
+                    <label for="DataFineComunicazione" id="labelDataFineComunicazione">Data Fine</label>
+                </div>
+                <div class="col">
+                    <input type="date" id="DataFineComunicazione" class="form-control" required>
+                </div>
+            </div>
+        
+            <!-- Azioni -->
+            <div class="form-row align-items-center mt-2">
+                <div class="col-auto">
+                    <div id="Azioni">Azioni</div>
+                </div>
+                <div class="col">
+                    <button id="InserisciComunicazione" class="btn btn-primary">
+                        <img src="img/UI/add.png" alt="Inserisci">
+                    </button>
+                </div>
+            </div>
+            
         </div>
+        
 
         <!-- Box Anteprima Comunicazione -->
         <div class="col-lg-4 col-md-12" id="BoxAnteprimaComunicazione">
@@ -95,9 +137,9 @@
     /* Stili personalizzati per i box */
     #FormInserimentoComunicazione {
         padding: 20px;
-        background-color: #f8f9fa;
+        background-color: #004996;;
         border: 1px solid #dee2e6;
-        border-radius: 8px;
+        border-radius: 0px 15px 15px 0px;
         height: 100%;
     }
 
@@ -133,6 +175,29 @@
         border: 0;
         border-radius: 8px;
     }
+
+    #BoxTestoAnteprimaComunicazione {
+        color: #FF473D;
+        font-family: OutFit;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #000;
+    }
+    
+    #BoxTestoUltimaComunicazione {
+        color: #FF473D;
+        font-family: OutFit;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #000;
+    }
+    
 
     /* Gestione delle intestazioni e corpo delle comunicazioni */
     #HeadComunicazioneAnteprima,
@@ -180,9 +245,9 @@
     #MainComunicazioneAnteprima,
     #MainUltimaComunicazione {
         padding: 20px;
-        background-color: #333;
+        background-color: #205295;
         color: #FFF;
-        font-size: 18px;
+        font-size: 25px;
         text-align: justify;
         word-break: break-word;
         /* Spezza le parole lunghe per andare a capo */
@@ -197,7 +262,11 @@
         border-radius: 0 0 15px 15px;
         border-top: 5px solid #0E284B;
         text-align: left;
+        font-size: 30px;
+        font-style: normal;
+        line-height: normal;
         padding-left: 20px;
+        padding-bottom: 3px;
         color: #FFF;
     }
 
