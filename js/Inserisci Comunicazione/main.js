@@ -18,8 +18,7 @@ function start(){
             document.getElementById('TitoloComunicazione').style.display = 'block';
             document.getElementById('labelTitoloComunicazione').style.display = 'block';
             //mostro NumeroComunicazione e il suo label
-            document.getElementById('NumeroComunicazione').style.display = 'block';
-            document.getElementById('labelNumeroComunicazione').style.display = 'block';
+            document.getElementById('DivFormNumeroComunicazione').style.display = 'block';
             document.getElementById('TitoloComunicazione').style.pointerEvents = 'auto';
             document.getElementById('CorpoComunicazione').style.pointerEvents = 'auto';
             document.getElementById('NumeroComunicazione').style.pointerEvents = 'auto';
@@ -46,8 +45,8 @@ function start(){
             document.getElementById('TitoloComunicazione').style.display = 'none';
             document.getElementById('labelTitoloComunicazione').style.display = 'none';
             //nascondo NumeroComunicazione e il suo label
-            document.getElementById('NumeroComunicazione').style.display = 'none';
-            document.getElementById('labelNumeroComunicazione').style.display = 'none';
+            document.getElementById('DivFormNumeroComunicazione').style.display = 'none';
+
             document.getElementById('CorpoComunicazione').style.pointerEvents = 'auto';
             document.getElementById('DataFineComunicazione').style.pointerEvents = 'auto';
             document.getElementById('DataInizioComunicazione').style.pointerEvents = 'auto';
@@ -72,8 +71,8 @@ function start(){
             document.getElementById('TitoloComunicazione').style.display = 'none';
             document.getElementById('labelTitoloComunicazione').style.display = 'none';
             //nascondo NumeroComunicazione e il suo label
-            document.getElementById('NumeroComunicazione').style.display = 'none';
-            document.getElementById('labelNumeroComunicazione').style.display = 'none';
+            document.getElementById('DivFormNumeroComunicazione').style.display = 'none';
+            
             document.getElementById('CorpoComunicazione').style.pointerEvents = 'auto';
             document.getElementById('DataFineComunicazione').style.pointerEvents = 'auto';
             document.getElementById('DataInizioComunicazione').style.pointerEvents = 'auto';

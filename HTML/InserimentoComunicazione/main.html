@@ -1,14 +1,11 @@
-<div class="container-fluid">
+<div class="container-fluid" id="MAIN">
     <div class="row">
         <!-- Form di Inserimento -->
-        <div id="FormInserimentoComunicazione" class="col-lg-4 col-md-12"> 
-
-            <!-- TAG -->
-            <div class="form-row align-items-center">
-                <div class="col-auto">
-                    <label for="TagComunicazione" id="TagComunicazioneLabel">TAG</label>
-                </div>
-                <div class="col">
+        <div id="BoxFormInserimentoComunicazione" class="col-lg-4 col-md-12">
+            <div id="BoxTestoInserimentoComunicazione">Nuova Comunicazione</div>
+            <div id="FormInserimentoComunicazione">
+                <div class="form-group">
+                    <label for="TagComunicazione" id="TagComunicazioneLabel">Tag</label>
                     <select id="TagComunicazione" class="form-control">
                         <option value="niente">Seleziona un'opzione</option>
                         <option value="Comunicazione">Comunicazione</option>
@@ -16,72 +13,40 @@
                         <option value="Emergenza">Emergenza</option>
                     </select>
                 </div>
-            </div>
-        
-            <!-- Numero -->
-            <div class="form-row align-items-center mt-2">
-                <div class="col-auto">
+            
+                <div id="DivFormNumeroComunicazione">
                     <label for="NumeroComunicazione" id="labelNumeroComunicazione">Numero</label>
+                    <input type="number" id="NumeroComunicazione" class="form-control" required min="1" max="9999" placeholder="100">
                 </div>
-                <div class="col">
-                    <input type="number" id="NumeroComunicazione" class="form-control" required min="1" max="9999">
-                </div>
-            </div>
-        
-            <!-- Titolo -->
-            <div class="form-row align-items-center mt-2">
-                <div class="col">
+            
+                <div>
                     <input type="text" id="TitoloComunicazione" class="form-control" max="55" min="1" placeholder="Titolo">
-                </div>
-                <div class="col-auto">
                     <label for="TitoloComunicazione" id="labelTitoloComunicazione">0/55</label>
                 </div>
-            </div>
-        
-            <!-- Corpo -->
-            <div class="form-row align-items-center mt-2">
-                <div class="col">
+            
+                <div>
                     <textarea id="CorpoComunicazione" class="form-control" max="300" min="1" placeholder="Corpo"></textarea>
-                </div>
-                <div class="col-auto">
                     <label for="CorpoComunicazione" id="labelCorpoComunicazione">0/300</label>
                 </div>
-            </div>
-        
-            <!-- Data Inizio -->
-            <div class="form-row align-items-center mt-2">
-                <div class="col-auto">
+            
+                <div class="form-group2">
                     <label for="DataInizioComunicazione" id="labelDataInizioComunicazione">Data Inizio</label>
-                </div>
-                <div class="col">
                     <input type="date" id="DataInizioComunicazione" class="form-control" required>
                 </div>
-            </div>
-        
-            <!-- Data Fine -->
-            <div class="form-row align-items-center mt-2">
-                <div class="col-auto">
+            
+                <div class="form-group2">
                     <label for="DataFineComunicazione" id="labelDataFineComunicazione">Data Fine</label>
-                </div>
-                <div class="col">
                     <input type="date" id="DataFineComunicazione" class="form-control" required>
                 </div>
-            </div>
-        
-            <!-- Azioni -->
-            <div class="form-row align-items-center mt-2">
-                <div class="col-auto">
+            
+                <div class="form-group">
                     <div id="Azioni">Azioni</div>
-                </div>
-                <div class="col">
                     <button id="InserisciComunicazione" class="btn btn-primary">
-                        <img src="img/UI/add.png" alt="Inserisci">
+                        <img src="img\UI\add.png" alt="Inserisci">
                     </button>
                 </div>
             </div>
-            
         </div>
-        
 
         <!-- Box Anteprima Comunicazione -->
         <div class="col-lg-4 col-md-12" id="BoxAnteprimaComunicazione">
@@ -134,21 +99,255 @@
 </div>
 <script src="js/Inserisci%20Comunicazione/main.js"></script>
 <style>
+
+
     /* Stili personalizzati per i box */
     #FormInserimentoComunicazione {
+        max-width: 30.125rem;
         padding: 20px;
         background-color: #004996;;
         border: 1px solid #dee2e6;
         border-radius: 0px 15px 15px 0px;
-        height: 100%;
+        transform: translateY(3%);
     }
+
+    #FormInserimentoComunicazione div{
+        margin: 0;
+        padding: 0;
+        height: auto;
+        width: auto;
+    }
+
+    
+    #FormInserimentoComunicazione div label{
+        margin: 0;
+    }
+
+    .error {
+        color: red;
+    }
+
+    
+        #FormInserimentoComunicazione label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    
+        #TagComunicazione,
+        #NumeroComunicazione,
+        #TitoloComunicazione,
+        #CorpoComunicazione,
+        #DataInizioComunicazione,
+        #DataFineComunicazione {
+            background-color: white;
+            color: #404040;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 100%;
+            font-family: OutFit;
+            font-size: 20px;
+        }
+
+    #TitoloComunicazione,
+    #CorpoComunicazione{
+        margin-bottom: 0;
+    }
+    
+        #TagComunicazione option {
+            color: black;
+        }
+    
+        #Azioni {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        #TagComunicazioneLabel {
+            max-width: 6.625rem;
+            max-height: 3.625rem;
+            color: #FFF;
+            text-align: center;
+            font-family: OutFit;
+            font-size: 3rem;
+            font-style: normal;
+            font-weight: 735;
+            line-height: normal;
+        }
+        
+        #TagComunicazione {
+            max-width: 264px;
+            max-height: 50px;
+            border-radius: 0.625rem;
+            background: #F4F4F4;
+            
+            color: #000;
+            font-family: OutFit;
+            font-size: 1.5rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-align: center;
+            margin-left: 15px;
+            margin-bottom: 0;
+
+            display: inline-block;
+        }
+    
+        #InserisciComunicazione {
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        #InserisciComunicazione img {
+            height: 55px;
+            width: 55px;
+        }
+
+        #labelNumeroComunicazione {
+            width: 222px;
+            height: 50px;
+        
+            color: #FFF;
+            font-family: Outfit;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-bottom: 15px;
+        }
+        
+        #NumeroComunicazione {
+            width: 115px;
+            height: 50px;
+            border-radius: 10px;
+            background: #F4F4F4;
+        
+            color: #404040;
+            text-align: center;
+            font-family: OutFit;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 735;
+            line-height: normal;
+        
+            display: inline-block;
+            vertical-align: middle;
+        }
+    
+        #labelDataInizioComunicazione,
+        #labelDataFineComunicazione {
+            display: flex;
+            width: 248px;
+            height: 50px;
+            flex-direction: column;
+            justify-content: center;
+            color: #FFF;
+        
+            font-family: OutFit;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 735;
+            line-height: normal;
+
+            display: inline-block;
+        }
+
+        #labelTitoloComunicazione,
+        #labelCorpoComunicazione {
+            color: #EFEFEF;
+            font-family: Outfit;
+            text-align: end;
+            font-size: 16px;
+            font-style: normal;
+            line-height: normal;
+            
+        }
+
+#TitoloComunicazione {
+    max-width: 452px;
+    max-height: 50px;
+    border-radius: 10px;
+    background: #F4F4F4;
+
+    color: #404040;
+    text-align: center;
+    font-family: OutFit;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 735;
+    line-height: normal;
+}
+
+#CorpoComunicazione {
+    border-radius: 10px;
+    background: #F4F4F4;
+
+    max-width: 452px;
+    max-height: 165px;
+    color: #404040;
+    font-family: OutFit;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 735;
+    line-height: normal;
+}
+
+    #DataFineComunicazione,
+    #DataInizioComunicazione {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    background: #F4F4F4;
+    max-width: 175px;
+    max-height: 50px;
+
+    color: #404040;
+    text-align: center;
+    font-family: OutFit;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 735;
+    line-height: normal;
+
+    display: inline-block;
+}
+
+#Azioni {
+    color: #FFF;
+    font-family: OutFit;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 735;
+    line-height: normal;
+    display: inline-block;
+}
+
+#InserisciComunicazione {
+    width: 70px;
+    height: 70px;
+    border: 0;
+    background-color: #004996;
+}
+    
 
     #AnteprimaComunicazione,
     #UltimaComunicazione {
+        max-width: 484.215px;
+        min-height: 40.9375rem;
         background-color: transparent;
-        border: 1px solid #f8f9fa;
-        border-radius: 8px;
+        border: 2.5px solid #FFF;
+        background: #205295;
+        border-radius: 15px;
         height: 100%;
+    }
+
+    #BoxAnteprimaComunicazione{
+        transform: translateX(5%);
     }
 
     #NumeroComunicazione,
@@ -167,13 +366,30 @@
     }
 
     #BoxAnteprimaComunicazione,
-    #BoxUltimaComunicazione {
+    #BoxUltimaComunicazione,
+    #BoxFormInserimentoComunicazione {
         padding: 20px;
         margin-top: 20px;
         margin-bottom: 20px;
         background-color: transparent;
         border: 0;
         border-radius: 8px;
+    }
+
+    #BoxFormInserimentoComunicazione{
+        padding-left: 0px;
+    }
+
+    #BoxTestoInserimentoComunicazione{
+        color: #FF473D;
+        font-family: OutFit;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #000;
+        padding-left: 20px;
     }
 
     #BoxTestoAnteprimaComunicazione {
@@ -187,7 +403,7 @@
         -webkit-text-stroke-color: #000;
     }
     
-    #BoxTestoUltimaComunicazione {
+    #BoxTestoUltimaComunicazione{
         color: #FF473D;
         font-family: OutFit;
         font-size: 32px;
