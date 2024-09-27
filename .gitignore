@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 .idea/workspace.xml
 .idea/*
 php/infoAccess.php
+=======
+php/infoAccess.php
+.idea/*
+>>>>>>> master
