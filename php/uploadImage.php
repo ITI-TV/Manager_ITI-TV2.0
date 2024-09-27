@@ -16,7 +16,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if (in_array(strtolower($fileType), $allowedTypes)) {
             if (move_uploaded_file($_FILES['file']['tmp_name'], $targetFilePath)) {
-                echo "IMG/Componenti Aggiuntivi/" . $fileName;
+                // Leggi il contenuto del file
+                $fileData = file_get_contents($targetFilePath);
+                
+                // Codifica l'immagine in Base64
+                $base64Image = base64_encode($fileData);
+                
+                // Ottieni il mime type corretto per l'immagine
+                $base64MimeType = mime_content_type($targetFilePath);
+                
+                // Formatta la stringa Base64
+                $base64ImageWithPrefix = 'data:' . $base64MimeType . ';base64,' . $base64Image;
+
+                // Stampa la stringa Base64
+                echo $base64ImageWithPrefix;
             } else {
                 http_response_code(500);
                 echo 'Errore nel salvataggio del file.';
@@ -33,3 +46,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     http_response_code(405);
     echo 'Metodo non consentito.';
 }
+?>
