@@ -836,7 +836,7 @@ a:hover {
 
 #ListaComunicazioni {
     width: 100%;
-    border: 5px solid #FFF;
+    
     border-collapse: collapse;
 }
 
@@ -850,7 +850,7 @@ td,
 tr,
 th {
     border: 1px solid #FFF;
-    background: #005CD7;
+    
     padding: 0;
     margin: 0;
     color: #F4F4F4;
@@ -1002,9 +1002,6 @@ th {
     border-right: 2px solid #FFF;
     border-bottom: 2px solid #FFF;
     background: #004996;
-
-    position: absolute;
-    top: 255px;
 }
 
 #formTitoloComponentiAggiuntivi {
@@ -1035,7 +1032,6 @@ th {
     line-height: normal;
 
     text-align: end;
-    margin-left: 435px;
 
     padding: 0;
     box-sizing: border-box;
@@ -1044,7 +1040,6 @@ th {
 #formTestoComponentiAggiuntivi {
     width: 452px;
     height: 265px;
-    flex-shrink: 0;
 
     border-radius: 10px;
     background: #F4F4F4;
@@ -1054,12 +1049,7 @@ th {
     font-size: 30px;
     font-style: normal;
     font-weight: 735;
-    line-height: normal;
-
-    margin-top: 20px;
-    margin-left: 31px;
-
-    resize: none;
+    line-height: normal;;
 }
 
 #textFormDataInizioComponentiAggiuntivi,

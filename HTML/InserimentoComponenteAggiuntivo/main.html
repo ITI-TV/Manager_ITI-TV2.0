@@ -71,11 +71,139 @@
 
     /* Stili per il form */
     #FormComponentiAggiuntivi {
-        padding: 20px;
-        background-color: #f8f9fa;
-        border: 1px solid #dee2e6;
-        border-radius: 8px;
-        height: 100%;
+        width: 530px;
+        height: 700px;
+        flex-shrink: 0;
+    
+        border-radius: 0px 15px 15px 0px;
+        border-top: 2px solid #FFF;
+        border-right: 2px solid #FFF;
+        border-bottom: 2px solid #FFF;
+        background: #004996;
+    }
+    
+    #formTitoloComponentiAggiuntivi {
+        width: 452px;
+        height: 50px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        background: #F4F4F4;
+    
+        color: #404040;
+        font-family: Outfit, sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;
+    
+        margin-top: 20px;
+        margin-left: 31px;
+    }
+    
+    #textFormTitoloComponentiAggiuntivi,
+    #textFormTestoComponentiAggiuntivi {
+        color: #EFEFEF;
+        font-family: Outfit, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    
+        text-align: end;
+    
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    #formTestoComponentiAggiuntivi {
+        width: 452px;
+        height: 265px;
+    
+        border-radius: 10px;
+        background: #F4F4F4;
+    
+        color: #404040;
+        font-family: Outfit, sans-serif;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;;
+    }
+    
+    #textFormDataInizioComponentiAggiuntivi,
+    #textFormDataFineComponentiAggiuntivi,
+    #textFormImmagineComponentiAggiuntivi {
+        display: flex;
+        width: 248px;
+        height: 50px;
+        flex-direction: column;
+        justify-content: center;
+        flex-shrink: 0;
+    
+        color: #FFF;
+        font-family: Outfit, sans-serif;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;
+    }
+    
+    #formDataFineComponentiAggiuntivi,
+    #formDataInizioComponentiAggiuntivi {
+        border-radius: 10px;
+        background: #F4F4F4;
+        width: 175px;
+        height: 50px;
+        flex-shrink: 0;
+        color: #404040;
+        text-align: center;
+        font-family: OutFit;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;
+        margin-left: 25px;
+    }
+    
+    #upload {
+        background-image: url('../img/UI/upload.png');
+        border: none;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 75px;
+        height: 75px;
+        background-size: 100% 100%;
+        color: transparent;
+    
+        margin-left: 80px;
+        margin-top: -10px;
+    }
+    
+    #Azioni2 {
+        color: #FFF;
+        font-family: OutFit;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;
+    
+        display: flex;
+        flex-direction: column;
+    
+        position: absolute;
+        bottom: 13px;
+    }
+    
+    #submitComponenteAggiuntivo {
+        width: 75px;
+        height: 75px;
+        border: 0;
+        background-color: #004996;
+        position: absolute;
+        left: 360px;
+        bottom: 10px;
+        background-image: url("../img/UI/add.png");
     }
 
     /* Stili per l'anteprima */
