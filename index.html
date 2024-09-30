@@ -1,46 +1,346 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Applicazione</title>
-    <link rel="stylesheet" href="HTML/style.css">
-    <link rel="icon" href="img/Immagini%20Sito/FaviconITITV.ico" type="image/x-icon">
+    <title>GESTIONE INFORMAZIONI ITI-TV</title>
+    <link rel="shortcut icon" href="img/Immagini Sito/FaviconITITV.ico" type="image/x-icon">
     <script src="js/jquery.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /*importo font*/
+
+        @font-face {
+            font-family: 'Outfit';
+            src: url('Fonts/OutFit/Outfit-VariableFont_wght.ttf') format('truetype');
+        }
+
+        * {
+            font-family: 'Outfit';
+        }
+
+        /*import immagini*/
+        .navbar-toggler-icon {
+            background-image: url("img/UI/hamburger.png");
+        }
+
+        /* Header */
+        header {
+            background-color: #004996;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            /* Centra il titolo su schermi grandi */
+            align-items: center;
+            position: relative;
+            flex-wrap: nowrap;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: white;
+            margin: 0;
+            text-align: center;
+            transition: font-size 0.3s ease-in-out;
+            white-space: nowrap;
+            /* Impedisce al testo di andare a capo */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* Troncamento del testo in caso di overflow */
+            max-width: 70%;
+            /* Limita la larghezza del titolo per lasciare spazio alla info-box */
+        }
+
+        /* Box delle informazioni */
+        /* Userbox */
+        #userbox {
+            position: absolute;
+            top: 10px;
+            /* Distanza dal bordo superiore */
+            right: 10px;
+            /* Distanza dal bordo destro */
+            background-size: cover;
+            /* Adatta l'immagine di sfondo */
+            background-position: center;
+            width: 50px;
+            /* Larghezza del box */
+            height: 50px;
+            /* Altezza del box */
+            border-radius: 5px;
+            display: none;
+            /* Inizialmente nascosto */
+            color: white;
+            /* Colore del testo */
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Ombra per un effetto elevato */
+            cursor: pointer;
+            z-index: 2;
+            border-radius: 50%;
+            border: white 2px solid;
+        }
+
+        #boxInfo {
+            position: absolute;
+            top: 60px;
+            /* Distanza dal bordo superiore */
+            right: 10px;
+            /* Distanza dal bordo destro */
+            background-color: #479CFF;
+            /* Colore di sfondo */
+            color: white;
+            /* Colore del testo */
+            padding: 1rem;
+            border-radius: 5px;
+            display: none;
+            /* Inizialmente nascosto */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Ombra per un effetto elevato */
+
+        }
+
+        .normalUserBox {
+            background-image: url(img/UI/user.png);
+            /* adatto l'immagine alla dimansione del box */
+            width: 100px;
+            height: 100px;
+        }
+
+        .userboxClicked {
+            background-image: url(img/UI/user-hover.png);
+            background-color: #479CFF;
+            
+            /* adatto l'immagine alla dimansione del box */
+            width: 100px;
+            height: 100px;
+        }
+
+        /* Informazioni box */
+        #boxInfo {
+            display: block;
+            /* Inizialmente visibile all'interno del userbox */
+        }
+
+        #logout {
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 1rem;
+            text-decoration: underline;
+        }
+        #logout:hover{
+            color: #FF2626;
+        } 
+
+
+        /* Su schermi piccoli, sposta il titolo a sinistra */
+        @media (max-width: 768px) {
+            header {
+                justify-content: flex-start;
+                /* Sposta il titolo a sinistra */
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+                text-align: left;
+                /* Allinea il testo del titolo a sinistra */
+                max-width: 90%;
+                /* Riduce la larghezza del titolo per lasciare spazio alla info-box */
+            }
+
+            #userbox {
+                top: 11px;
+                right: 11px;
+                width: 40px;
+                height: 40px;
+                padding: 1rem;
+            }
+
+            #boxInfo {
+                top: 50px;
+                right: 11px;
+            }
+        }
+
+        /* Riduci ulteriormente il font su schermi molto piccoli */
+        @media (max-width: 576px) {
+            header h1 {
+                font-size: 1.2rem;
+                max-width: 85%;
+                /* Riduci ancora la larghezza del titolo */
+            }
+
+            #userbox {
+                top: 10px;
+                right: 10px;
+                width: 30px;
+                height: 30px;
+                padding: 1rem;
+            }
+
+            #boxInfo {
+                top: 40px;
+                right: 10px;
+            }
+        }
+
+
+        /* Main */
+        main {
+            background-color: #04326f;
+            min-height: calc(100vh - 150px);
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body {
+            background-color: #04326f;
+        }
+
+        .login-box {
+            background-color: #135392;
+            padding: 2rem;
+            border-radius: 10px;
+            border: 2px solid white;
+            color: white;
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box input {
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            border-radius: 5px;
+            border: none;
+            width: 100%;
+        }
+
+        .login-box button {
+            background-color: #33B4FE;
+            color: white;
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-box button:hover,
+        .login-box button:focus {
+            background-color: #1d8fcb;
+        }
+
+        /* App Content after login */
+        #appContent {
+            display: none;
+            width: 100%;
+            background-color: #04326f;
+            margin-bottom: 9rem;
+        }
+
+
+        #mainContent {
+            padding: 2rem;
+            background-color: #135392;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #004996;
+            padding: 1rem;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* metto il footer sotto ai contenuti anche quando cambuio la pagina */
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            flex: 1;
+            margin: 0;
+        }
+
+        footer img {
+            width: 80px;
+            height: auto;
+        }
+
+        footer img.left {
+            margin-right: auto;
+        }
+
+        footer img.right {
+            margin-left: auto;
+        }
+
+        .minimizzato {
+            width: 0px;
+            height: 0px;
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
-<header>
-    <h1 id="Titolo">GESTIONE INFORMAZIONI ITI-TV</h1>
-    <div id="userbox" style="display: none;">
-        <div id="boxInfo" style="display: none;">
-            <p><span id="usernameUserbox"></span></p>
-            <p id="logout">Logout</p>
+
+    <!-- Header -->
+    <header>
+        <h1>GESTIONE INFORMAZIONI ITI-TV</h1>
+        <div id="userbox" style="display: none;">
+            <div id="boxInfo" style="display: none;">
+                <p><span id="usernameUserbox"></span></p>
+                <p id="logout">Logout</p>
+            </div>
         </div>
-    </div>
-</header>
-<div id="loginContainer">
-    <form id="loginForm">
-        <input type="hidden" id="csrf_token" name="csrf_token">
-        <label for="username" class="loginLabel">USERNAME</label> <br>
-        <input type="text" id="username" name="username" required><br><br>
+    </header>
 
-        <label for="password" class="loginLabel">PASSWORD</label> <br>
-        <input type="password" id="password" name="password" required><br><br>
-
-        <button type="submit" id="loginButton">Accedi</button>
-    </form>
-    <p id="result"></p>
-</div>
-<div id="appContent" style="display: none;">
+    <!-- App Content (asincrono) -->
     <div id="navbar"></div>
-    <div id="mainContent"></div>
-</div>
-<div id="footer">
-    <p id="testFooter"> Realizzato da Samuele Marinelli & Gabriele Bovina <br>
-        Classe 4°X A.S 2023/2024</p>
-    <img src="img/Immagini Sito/logoITITV.png" id="logoTV" alt="LogoITI-TV">
-    <img src="img/Immagini%20Sito/logoiti%20.png" alt="logoITI" id="logoIti">
-</div>
-<script src="js/index.js"></script>
+    <div id="appContent">
+    </div>
+
+    <!-- Main -->
+    <main id="mainContentLogin">
+        <div class="login-box" id="loginContainer">
+            <form id="loginForm">
+                <input type="hidden" id="csrf_token" name="csrf_token">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" id="loginButton">Accedi</button>
+            </form>
+        </div>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>Realizzato da Samuele Marinelli & Gabriele Bovina <br> Classe 5°X A.S 2024/2025</p>
+        <img src="img/Immagini Sito/logoiti .png" alt="Image 1" class="right">
+        <img src="img/Immagini Sito/logoITITV.png" alt="Image 2" class="right">
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/index.js"></script>
 </body>
+
 </html>

@@ -6,6 +6,7 @@ console.log('. Classe 4X Informatica 2023/24 (Project Manager: Gabriele Bovina e
 console.log('. Classe 3X Informatica 2022/23 (Project Manager: Gabriele Bovina e Samuele Marinelli)');
 console.log('. Classe 5X Informatica 2020/21 (Project Manager: Luca Corticelli e Diego Bonati)');
 console.log('Ringraziamenti per il supporto e la collaborazione per gli eventi giornalieri: ');
+console.log('. Macca 4T Telecomunicazioni 2024/25');
 
 let username;
 
@@ -14,7 +15,7 @@ function checkSession(callback) {
         url: 'php/checkSession.php',
         type: 'GET',
         dataType: 'json',
-        success: function(data) {
+        success: function (data) {
             if (data.loggedIn) {
                 document.getElementById('userbox').style.display = 'block';
                 if (callback) callback(true);
@@ -25,7 +26,7 @@ function checkSession(callback) {
                 }
             }
         },
-        error: function(jqXHR, textStatus, errorThrown) {
+        error: function (jqXHR, textStatus, errorThrown) {
             console.error('Errore nel controllo della sessione:', textStatus, errorThrown);
             showLoginForm();
             if (callback) callback(false);
@@ -34,7 +35,7 @@ function checkSession(callback) {
 }
 
 function loadContent(page) {
-    checkSession(function(isLoggedIn) {
+    checkSession(function (isLoggedIn) {
         if (isLoggedIn) {
             const contentMap = {
                 'home': 'HTML/Benvenuto/main.html',
@@ -49,7 +50,7 @@ function loadContent(page) {
 
             const url = contentMap[page] || contentMap['home'];
 
-            $('#mainContent').load(url, function(response, status, xhr) {
+            $('#appContent').load(url, function (response, status, xhr) {
                 //do la classe active alla pagina selezionata
                 $('#navbar a').removeClass('active');
                 $(`#navbar a[data-page="${page}"]`).addClass('active');
@@ -62,7 +63,7 @@ function loadContent(page) {
 }
 
 function setupNavigation() {
-    $('#navbar').on('click', 'a', function(e) {
+    $('#navbar').on('click', 'a', function (e) {
         e.preventDefault();
         const page = $(this).data('page');
         if (page) {
@@ -72,7 +73,7 @@ function setupNavigation() {
     //sistemo la classe del userbox
     document.getElementById('userbox').classList.add('normalUserBox');
     //ascolto se userbox è cliccato
-    document.getElementById('userbox').addEventListener('click', function() {
+    document.getElementById('userbox').addEventListener('click', function () {
         //mostro il menu se è nascosto
         if (document.getElementById('boxInfo').style.display === 'none') {
             document.getElementById('boxInfo').style.display = 'block';
@@ -91,7 +92,7 @@ function setupNavigation() {
 }
 
 function showLoggedInState() {
-    $('#loginContainer').hide();
+    document.getElementById('mainContentLogin').classList.add('minimizzato');
     $('#appContent').show();
     loadNavbar();
     loadContent('home');
@@ -104,10 +105,10 @@ function showLoginForm() {
 
 function loadCSRFToken() {
     $.get('php/generateToken.php')
-        .done(function(token) {
+        .done(function (token) {
             $('#csrf_token').val(token);
         })
-        .fail(function(error) {
+        .fail(function (error) {
             console.error('Riavvio della pagina:', error);
             window.location.reload();
         });
@@ -127,7 +128,7 @@ function handleLogin(e) {
         type: 'POST',
         data: formData,
         dataType: 'json',
-        success: function(data) {
+        success: function (data) {
             if (data.success) {
 
                 fetch('php/getUsername.php')
@@ -150,7 +151,7 @@ function handleLogin(e) {
                 window.location.reload();
             }
         },
-        error: function(jqXHR, textStatus, errorThrown) {
+        error: function (jqXHR, textStatus, errorThrown) {
             console.error('Errore AJAX:', textStatus, errorThrown);
             $('#result').text('Errore di connessione al server');
         }
@@ -158,8 +159,38 @@ function handleLogin(e) {
 }
 
 function loadNavbar() {
-    $('#navbar').load('HTML/navbar.html', function() {
+    $('#navbar').load('HTML/navbar.html', function () {
         setupNavigation();
+        const hamburgerButton = document.getElementById("hamburgerButton");
+        const navbarMenu = document.getElementById("navbarNav");
+
+        function openMenu() {
+            navbarMenu.classList.add("show", "show-menu");
+            document.addEventListener("click", handleOutsideClick);
+            hamburgerButton.removeEventListener("click", openMenu);
+        }
+
+        function closeMenu() {
+            if (navbarMenu.classList.contains("show")) {
+                navbarMenu.classList.remove("show", "show-menu");
+                document.removeEventListener("click", handleOutsideClick);
+                hamburgerButton.addEventListener("click", openMenu);
+            }
+        }
+
+        function handleOutsideClick(event) {
+            if (!navbarMenu.contains(event.target) && !hamburgerButton.contains(event.target)) {
+                closeMenu();
+            }
+        }
+
+        hamburgerButton.addEventListener("click", openMenu);
+
+        navbarMenu.addEventListener("click", function (event) {
+            if (event.target.tagName === "A") {
+                closeMenu();
+            }
+        });
     });
 }
 
@@ -168,7 +199,7 @@ function handleLogout() {
         url: 'php/logout.php',
         type: 'POST',
         dataType: 'json',
-        success: function(data) {
+        success: function (data) {
             console.log('Risposta logout:', data);
             if (data && data.success) {
                 showLoginForm();
@@ -180,15 +211,15 @@ function handleLogout() {
                 console.error('Errore durante il logout:', data ? data.message : 'Risposta non valida');
             }
         },
-        error: function(jqXHR, textStatus, errorThrown) {
+        error: function (jqXHR, textStatus, errorThrown) {
             console.error('Errore AJAX durante il logout:', textStatus, errorThrown);
             console.log('Risposta del server:', jqXHR.responseText);
         }
     });
 }
 
-$(document).ready(function() {
-    checkSession(function(isLoggedIn) {
+$(document).ready(function () {
+    checkSession(function (isLoggedIn) {
         if (isLoggedIn) {
             //contatto il file getUrsername.php per ottenere il nome utente
             fetch('php/getUsername.php')
@@ -213,3 +244,4 @@ $(document).ready(function() {
 
     $('#loginForm').on('submit', handleLogin);
 });
+

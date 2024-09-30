@@ -1,8 +1,8 @@
-function startVisualizzazioneComponenteAggiuntivo(){
+function startVisualizzazioneComponenteAggiuntivo() {
     fetch('php/getters.php?action=getComponentiAggiuntivi')
         .then(response => response.json())
         .then(data => {
-            for (let i=0; i<data.length; i++){
+            for (let i = 0; i < data.length; i++) {
                 let riga = document.createElement('tr');
                 let titoloComponenteAggiuntivo = document.createElement('td');
                 let corpoComponenteAggiuntivo = document.createElement('td');
@@ -12,15 +12,17 @@ function startVisualizzazioneComponenteAggiuntivo(){
                 let azioniComponenteAggiuntivo = document.createElement('td');
                 let visualizza = document.createElement('button');
                 visualizza.classList.add('BottoneVisualizzaComunicazione');
-                visualizza.innerHTML = '<img src="../img/UI/occhio.png"> ';
-                visualizza.addEventListener('click', function(){
+                visualizza.innerHTML = '<img src="img/UI/occhio.png"> ';
+                visualizza.addEventListener('click', function () {
                     let TitoloComponenteAggiuntivo = document.getElementById('TitoloComponentiAggiuntivi');
                     let CorpoComponenteAggiuntivo = document.getElementById('TestoComponentiAggiuntivi');
                     let FirmaComponenteAggiuntivo = document.getElementById('ProfComponentiAggiuntivi');
+                    let ImmagineComponenteAggiuntivo = document.getElementById('ImmagineComponentiAggiuntivi');
 
                     TitoloComponenteAggiuntivo.innerText = data[i]['Titolo'];
                     CorpoComponenteAggiuntivo.innerText = data[i]['Testo'];
                     FirmaComponenteAggiuntivo.innerText = data[i]['Prof'];
+                    ImmagineComponenteAggiuntivo.src = data[i]['Immagine'];
                 });
                 titoloComponenteAggiuntivo.innerText = data[i]['Titolo'];
                 corpoComponenteAggiuntivo.innerText = data[i]['Testo'];
@@ -34,7 +36,7 @@ function startVisualizzazioneComponenteAggiuntivo(){
                 riga.appendChild(dataFineComponenteAggiuntivo);
                 riga.appendChild(profComponenteAggiuntivo);
                 riga.appendChild(azioniComponenteAggiuntivo);
-                document.getElementById('TabellaComponentiAggiuntivi').appendChild(riga);
+                document.getElementById('ListaComponenti').appendChild(riga);
             }
         });
 

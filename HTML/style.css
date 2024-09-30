@@ -1,28 +1,28 @@
 /* --FONTS-- */
 @font-face {
     font-family: FiraMono;
-    src: url(/Fonts/FiraMono/FiraMono-Bold.ttf) format("truetype");
+    src: url(../Fonts/FiraMono/FiraMono-Bold.ttf) format("truetype");
     font-style: normal;
 }
 
 @font-face {
     font-family: OutFit;
-    src: url(/Fonts/OutFit/Outfit-VariableFont_wght.ttf) format("truetype");
+    src: url(../Fonts/OutFit/Outfit-VariableFont_wght.ttf) format("truetype");
 }
 
 @font-face {
     font-family: Righteous;
-    src: url(/Fonts/Righteous/Righteous-Regular.ttf) format("truetype");
+    src: url(../Fonts/Righteous/Righteous-Regular.ttf) format("truetype");
 }
 
 @font-face {
     font-family: Recursive;
-    src: url(/Fonts/Recursive/Recursive-VariableFont_CASL,CRSV,MONO,slnt,wght.ttf) format("truetype");
+    src: url(../Fonts/Recursive/Recursive-VariableFont_CASL,CRSV,MONO,slnt,wght.ttf) format("truetype");
 }
 
 @font-face {
     font-family: Inter;
-    src: url(/Fonts/Inter/Inter-VariableFont_slnt,wght.ttf) format("truetype");
+    src: url(../Fonts/Inter/Inter-VariableFont_slnt,wght.ttf) format("truetype");
 }
 
 * {
@@ -32,7 +32,7 @@
 }
 
 /* LOGIN */
-#loginContainer{
+#loginContainer {
     width: 43.75rem;
     height: 30rem;
     flex-shrink: 0;
@@ -45,11 +45,11 @@
     transform: translateY(-50%)
 }
 
-#loginForm{
+#loginForm {
     margin-top: 70px;
 }
 
-.loginLabel{
+.loginLabel {
     margin-left: 5%;
     color: #FFF;
     text-align: center;
@@ -60,7 +60,8 @@
     line-height: normal;
 }
 
-#username,#password{
+#username,
+#password {
     margin-left: 15%;
     width: 31.875rem;
     height: 3.125rem;
@@ -74,7 +75,7 @@
     line-height: normal;
 }
 
-#loginButton{
+#loginButton {
     color: #FFF;
     text-align: center;
     font-family: OutFit;
@@ -92,14 +93,14 @@
 }
 
 /*GRAFICA BASE*/
-header{
+header {
     height: 7.1875rem;
     width: 100%;
     flex-shrink: 0;
     background: #004996;
 }
 
-#logoTV{
+#logoTV {
     width: 211.603px;
     height: 110px;
     position: absolute;
@@ -107,7 +108,7 @@ header{
     top: -10px;
 }
 
-#Titolo{
+#Titolo {
     position: absolute;
     color: #FF2626;
     text-align: center;
@@ -122,11 +123,11 @@ header{
     width: 100%;
 }
 
-body{
+body {
     background: #04326F;
 }
 
-#footer{
+#footer {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -135,7 +136,8 @@ body{
     background: #004996;
 
 }
-#testFooter{
+
+#testFooter {
     color: #FFF;
     font-family: OutFit;
     font-size: 30px;
@@ -146,7 +148,7 @@ body{
     margin-top: 10px;
 }
 
-#welcome{
+#welcome {
     color: #FFF;
     text-align: center;
     font-family: Outfit;
@@ -156,7 +158,8 @@ body{
     line-height: normal;
     margin-top: 200px;
 }
-#logoIti{
+
+#logoIti {
     width: 127.397px;
     height: 100px;
     position: absolute;
@@ -164,7 +167,8 @@ body{
     bottom: 0;
 
 }
-#userbox  {
+
+#userbox {
     position: absolute;
     top: 0.44rem;
     right: 10px;
@@ -175,7 +179,7 @@ body{
     cursor: pointer;
 }
 
-.normalUserBox{
+.normalUserBox {
     border-radius: 0.9375rem 0.9375rem 0.9375rem 0.9375rem;
     background: #04326F url("../img/UI/user.png") no-repeat;
     background-size: 100%;
@@ -187,7 +191,7 @@ body{
     background-size: 100%;
 }
 
-#boxInfo{
+#boxInfo {
     position: absolute;
     width: 270px;
     height: 150px;
@@ -198,7 +202,7 @@ body{
     background: #479CFF;
 }
 
-#logout{
+#logout {
     /*Testo*/
     color: #FBFBFB;
     text-align: center;
@@ -218,11 +222,11 @@ body{
 
 }
 
-#logout:hover{
+#logout:hover {
     background-color: #FF2626;
 }
 
-#usernameUserbox{
+#usernameUserbox {
     margin-top: 500px;
     color: #F4F4F4;
     text-align: center;
@@ -234,7 +238,7 @@ body{
 }
 
 /*NAVBAR*/
-nav{
+nav {
     width: 100%;
     height: 96px;
     margin-top: 10px;
@@ -248,7 +252,7 @@ nav{
     text-align: center;
 }
 
-ul{
+ul {
     display: flex;
     height: 58px;
     flex-direction: row;
@@ -267,11 +271,11 @@ ul{
     list-style: none;
 }
 
-a{
+a {
     background: #04326F;
     color: #FFF;
     text-align: center;
-    font-family: Outfit,sans-serif;
+    font-family: Outfit, sans-serif;
     font-size: 24px;
     font-style: normal;
     padding: 5px 10px;
@@ -283,27 +287,29 @@ a{
 
     text-decoration: none;
 }
-a:hover{
+
+a:hover {
     color: #000;
     background: #479BFF;
 }
 
-.active{
+.active {
     background: #479BFF;
-    color: #000 ;
+    color: #000;
 }
-#home{
+
+#home {
     background-image: url(../img/UI/home.png);
 }
 
-#home:hover{
+#home:hover {
     background-image: url(../img/UI/home-hover.png);
 }
 
 /*GRAFICA INSERIMENTO COMUNICAZIONE*/
 
 /*Form*/
-#FormInserimentoComunicazione{
+#FormInserimentoComunicazione {
     width: 33.125rem;
     height: 43.75rem;
     flex-shrink: 0;
@@ -328,7 +334,7 @@ a:hover{
     margin-left: 31px;
 }
 
-#TagComunicazioneLabel{
+#TagComunicazioneLabel {
     width: 6.625rem;
     height: 3.625rem;
     color: #FFF;
@@ -340,7 +346,7 @@ a:hover{
     line-height: normal;
 }
 
-#TagComunicazione{
+#TagComunicazione {
     width: 324px;
     height: 50px;
     border-radius: 0.625rem;
@@ -356,7 +362,7 @@ a:hover{
     text-align: center;
 }
 
-#TagComunicazione option{
+#TagComunicazione option {
     color: #000;
     font-family: OutFit;
     font-size: 1.5rem;
@@ -364,10 +370,10 @@ a:hover{
     font-weight: 600;
     line-height: normal;
     border-color: #F4F4F4;
-    border-radius: 0 0 10px 10px;;
+    border-radius: 0 0 10px 10px;
 }
 
-#labelNumeroComunicazione{
+#labelNumeroComunicazione {
     width: 222px;
     height: 50px;
     flex-shrink: 0;
@@ -380,7 +386,7 @@ a:hover{
     line-height: normal;
 }
 
-#NumeroComunicazione{
+#NumeroComunicazione {
     width: 115px;
     height: 50px;
     flex-shrink: 0;
@@ -397,10 +403,10 @@ a:hover{
 
     display: inline-block;
     vertical-align: middle;
-    margin-left: 115px;
 }
 
-#labelTitoloComunicazione, #labelCorpoComunicazione{
+#labelTitoloComunicazione,
+#labelCorpoComunicazione {
     color: #EFEFEF;
     font-family: Outfit;
     text-align: end;
@@ -409,10 +415,9 @@ a:hover{
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-
 }
 
-#TitoloComunicazione{
+#TitoloComunicazione {
     width: 452px;
     height: 50px;
     flex-shrink: 0;
@@ -430,7 +435,7 @@ a:hover{
     margin-top: 10px;
 }
 
-#CorpoComunicazione{
+#CorpoComunicazione {
     border-radius: 10px;
     background: #F4F4F4;
 
@@ -448,7 +453,8 @@ a:hover{
     resize: none;
 }
 
-#labelDataInizioComunicazione, #labelDataFineComunicazione{
+#labelDataInizioComunicazione,
+#labelDataFineComunicazione {
     display: flex;
     width: 248px;
     height: 50px;
@@ -464,7 +470,8 @@ a:hover{
     line-height: normal;
 }
 
-#DataFineComunicazione,#DataInizioComunicazione{
+#DataFineComunicazione,
+#DataInizioComunicazione {
     border-radius: 10px;
     background: #F4F4F4;
     width: 175px;
@@ -481,7 +488,7 @@ a:hover{
     margin-left: 25px;
 }
 
-#Azioni{
+#Azioni {
     color: #FFF;
     font-family: OutFit;
     font-size: 48px;
@@ -492,22 +499,30 @@ a:hover{
     display: flex;
     flex-direction: column;
 }
-#InserisciComunicazione{
+
+#InserisciComunicazione {
     width: 70px;
     height: 70px;
     border: 0;
     background-color: #004996;
     margin-left: 200px;
     margin-bottom: 1px;
+    visibility: hidden;
 }
 
-#TitoloComunicazione, #CorpoComunicazione, #NumeroComunicazione, #DataFineComunicazione, #DataInizioComunicazione, #InserisciComunicazione{
+#TitoloComunicazione,
+#CorpoComunicazione,
+#NumeroComunicazione,
+#DataFineComunicazione,
+#DataInizioComunicazione,
+#InserisciComunicazione {
     pointer-events: none;
 }
 
-.error{
+.error {
     color: red;
 }
+
 /*Comunicazioni*/
 
 #AnteprimaComunicazione {
@@ -534,7 +549,7 @@ a:hover{
     left: 67%;
 }
 
-#BoxTestoAnteprimaComunicazione{
+#BoxTestoAnteprimaComunicazione {
     color: #FF473D;
     position: absolute;
     left: 660px;
@@ -548,7 +563,7 @@ a:hover{
     -webkit-text-stroke-color: #000;
 }
 
-#BoxTestoUltimaComunicazione{
+#BoxTestoUltimaComunicazione {
     color: #FF473D;
     position: absolute;
     left: 1295px;
@@ -565,7 +580,7 @@ a:hover{
 
 
 #NumeroComunicazioneAnteprima,
-#NumeroUltimaComunizazione{
+#NumeroUltimaComunizazione {
     width: 105px;
     height: 63px;
     position: absolute;
@@ -586,7 +601,7 @@ a:hover{
 }
 
 #DivisoreNumeroTitoloComunicazioneAnteprima,
-#DivisoreNumeroTitoloUltimaComunicazione{
+#DivisoreNumeroTitoloUltimaComunicazione {
     width: 3.228px;
     height: 85.393px;
     flex-shrink: 0;
@@ -597,7 +612,7 @@ a:hover{
 }
 
 #HeadComunicazioneAnteprima,
-#HeadUltimaComunicazione{
+#HeadUltimaComunicazione {
     width: 480px;
     height: 85.393px;
     flex-shrink: 0;
@@ -611,7 +626,7 @@ a:hover{
 }
 
 #CorpoComunicazioneAnteprima,
-#CorpoUltimaComunicazione{
+#CorpoUltimaComunicazione {
     text-align: justify;
     color: #FFF;
     font-family: 'OutFit', sans-serif;
@@ -629,7 +644,7 @@ a:hover{
 }
 
 #TitoloComunicazioneAnteprima,
-#TitoloUltimaComunicazione{
+#TitoloUltimaComunicazione {
     display: flex;
     width: 331.867px;
     height: 42.696px;
@@ -651,7 +666,7 @@ a:hover{
 }
 
 #FooterComunicazioneAnteprima,
-#FooterUltimaComunicazione{
+#FooterUltimaComunicazione {
     width: 480.215px;
     height: 38.815px;
     flex-shrink: 0;
@@ -677,11 +692,11 @@ a:hover{
 }
 
 /*Visulizzazione Comunicazioni*/
-#AnteprimaVisualizzazioneComunicazione{
+#AnteprimaVisualizzazioneComunicazione {
     margin-left: 18px;
 }
 
-#TestoAnteprimaVisualizzazioneComunicazione{
+#TestoAnteprimaVisualizzazioneComunicazione {
     color: #FF473D;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #232323;
@@ -697,13 +712,13 @@ a:hover{
     height: 40.9375rem;
     flex-shrink: 0;
     border-radius: 0.9375rem;
-    border: 2.5px solid #FFF ;
+    border: 2.5px solid #FFF;
 
     background: #205295;
     position: absolute;
 }
 
-#NumeroVisualizzazioneComunicazioneAnteprima{
+#NumeroVisualizzazioneComunicazioneAnteprima {
     color: #FFF;
     text-align: center;
     font-family: Outfit;
@@ -724,7 +739,7 @@ a:hover{
     left: 5px;
 }
 
-#DivisoreNumeroTitoloVisualizzazioneComunicazioneAnteprima{
+#DivisoreNumeroTitoloVisualizzazioneComunicazioneAnteprima {
     width: 3.228px;
     height: 85.393px;
     flex-shrink: 0;
@@ -734,7 +749,7 @@ a:hover{
     left: 115px;
 }
 
-#HeadVisualizzazioneComunicazioneAnteprima{
+#HeadVisualizzazioneComunicazioneAnteprima {
     width: 480px;
     height: 85.393px;
     flex-shrink: 0;
@@ -747,7 +762,7 @@ a:hover{
     z-index: 0;
 }
 
-#CorpoVisualizzazioneComunicazioneAnteprima{
+#CorpoVisualizzazioneComunicazioneAnteprima {
     text-align: justify;
     color: #FFF;
     font-family: 'OutFit', sans-serif;
@@ -763,7 +778,7 @@ a:hover{
     text-wrap: wrap;
 }
 
-#TitoloVisualizzazioneComunicazioneAnteprima{
+#TitoloVisualizzazioneComunicazioneAnteprima {
     color: #FFF;
     text-align: center;
     position: absolute;
@@ -785,7 +800,7 @@ a:hover{
     font-style: normal;
 }
 
-#FooterVisualizzazioneComunicazioneAnteprima{
+#FooterVisualizzazioneComunicazioneAnteprima {
     width: 480.215px;
     height: 38.815px;
     flex-shrink: 0;
@@ -797,7 +812,7 @@ a:hover{
     left: 0;
 }
 
-#FirmaVisualizzazioneComunicazioneAnteprima{
+#FirmaVisualizzazioneComunicazioneAnteprima {
     color: #FFF;
     text-align: left;
     font-family: 'OutFit', sans-serif;
@@ -809,30 +824,38 @@ a:hover{
 
 
 }
+
 #ListaComunicazioniRegistrate {
-    margin-left: 35.26344rem; /* Sposta la tabella a destra della sezione fissa */
-    overflow-x: auto; /* Attiva lo scorrimento orizzontale */
-    margin-right: 30px; /* Aggiungi un po' di padding per evitare che il contenuto tocchi il bordo */
+    margin-left: 35.26344rem;
+    /* Sposta la tabella a destra della sezione fissa */
+    overflow-x: auto;
+    /* Attiva lo scorrimento orizzontale */
+    margin-right: 30px;
+    /* Aggiungi un po' di padding per evitare che il contenuto tocchi il bordo */
 }
 
 #ListaComunicazioni {
     width: 100%;
-    border: 5px solid #FFF;
+    
     border-collapse: collapse;
 }
 
-#ListaComunicazioni, th, td {
+#ListaComunicazioni,
+th,
+td {
     border: 1px solid black;
 }
 
-td, tr, th {
+td,
+tr,
+th {
     border: 1px solid #FFF;
-    background: #005CD7;
+    
     padding: 0;
     margin: 0;
     color: #F4F4F4;
     text-align: center;
-    font-family: Outfit,sans-serif;
+    font-family: Outfit, sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
@@ -847,7 +870,7 @@ td, tr, th {
 
 /* COMPONENTI AGGIUNTIVI*/
 
-#AnteprimaComponente{
+#AnteprimaComponente {
     width: 100%;
     max-width: 1284.804px;
     height: 700.167px;
@@ -931,7 +954,7 @@ td, tr, th {
     flex-shrink: 0;
     flex-direction: column;
     color: #FFF;
-    font-family: Outfit,sans-serif;
+    font-family: Outfit, sans-serif;
     font-size: 28px;
     font-style: normal;
     font-weight: 300;
@@ -969,7 +992,7 @@ td, tr, th {
 
 /* FORM COMPONENTI*/
 
-#boxFormComponentiAggiuntivi{
+#boxFormComponentiAggiuntivi {
     width: 530px;
     height: 700px;
     flex-shrink: 0;
@@ -979,12 +1002,9 @@ td, tr, th {
     border-right: 2px solid #FFF;
     border-bottom: 2px solid #FFF;
     background: #004996;
-
-    position: absolute;
-    top: 255px;
 }
 
-#formTitoloComponentiAggiuntivi{
+#formTitoloComponentiAggiuntivi {
     width: 452px;
     height: 50px;
     flex-shrink: 0;
@@ -1002,7 +1022,8 @@ td, tr, th {
     margin-left: 31px;
 }
 
-#textFormTitoloComponentiAggiuntivi,#textFormTestoComponentiAggiuntivi{
+#textFormTitoloComponentiAggiuntivi,
+#textFormTestoComponentiAggiuntivi {
     color: #EFEFEF;
     font-family: Outfit, sans-serif;
     font-size: 16px;
@@ -1011,16 +1032,14 @@ td, tr, th {
     line-height: normal;
 
     text-align: end;
-    margin-left: 435px;
 
     padding: 0;
     box-sizing: border-box;
 }
 
-#formTestoComponentiAggiuntivi{
+#formTestoComponentiAggiuntivi {
     width: 452px;
     height: 265px;
-    flex-shrink: 0;
 
     border-radius: 10px;
     background: #F4F4F4;
@@ -1030,17 +1049,12 @@ td, tr, th {
     font-size: 30px;
     font-style: normal;
     font-weight: 735;
-    line-height: normal;
-
-    margin-top: 20px;
-    margin-left: 31px;
-
-    resize: none;
+    line-height: normal;;
 }
 
 #textFormDataInizioComponentiAggiuntivi,
 #textFormDataFineComponentiAggiuntivi,
-#textFormImmagineComponentiAggiuntivi{
+#textFormImmagineComponentiAggiuntivi {
     display: flex;
     width: 248px;
     height: 50px;
@@ -1056,7 +1070,8 @@ td, tr, th {
     line-height: normal;
 }
 
-#formDataFineComponentiAggiuntivi,#formDataInizioComponentiAggiuntivi{
+#formDataFineComponentiAggiuntivi,
+#formDataInizioComponentiAggiuntivi {
     border-radius: 10px;
     background: #F4F4F4;
     width: 175px;
@@ -1072,7 +1087,7 @@ td, tr, th {
     margin-left: 25px;
 }
 
-#upload{
+#upload {
     background-image: url('../img/UI/upload.png');
     border: none;
     background-color: transparent;
@@ -1087,7 +1102,7 @@ td, tr, th {
     margin-top: -10px;
 }
 
-#Azioni2{
+#Azioni2 {
     color: #FFF;
     font-family: OutFit;
     font-size: 48px;
@@ -1102,7 +1117,7 @@ td, tr, th {
     bottom: 13px;
 }
 
-#submitComponenteAggiuntivo{
+#submitComponenteAggiuntivo {
     width: 75px;
     height: 75px;
     border: 0;
@@ -1113,15 +1128,18 @@ td, tr, th {
     background-image: url("../img/UI/add.png");
 }
 
-#boxTabellaComponentiAggiuntivi{
-    margin-right: 30.26344rem; /* Sposta la tabella a destra della sezione fissa */
-    overflow-x: auto; /* Attiva lo scorrimento orizzontale */
-    margin-left: 20px; /* Aggiungi un po' di padding per evitare che il contenuto tocchi il bordo */
+#boxTabellaComponentiAggiuntivi {
+    margin-right: 30.26344rem;
+    /* Sposta la tabella a destra della sezione fissa */
+    overflow-x: auto;
+    /* Attiva lo scorrimento orizzontale */
+    margin-left: 20px;
+    /* Aggiungi un po' di padding per evitare che il contenuto tocchi il bordo */
     position: absolute;
     bottom: 530px;
 }
 
-#TabellaComponentiAggiuntivi{
+#TabellaComponentiAggiuntivi {
     border-collapse: collapse;
     width: 570px;
 }
@@ -1130,16 +1148,20 @@ td, tr, th {
 
 .container {
     display: flex;
-    justify-content: space-between; /* Adjusts the space between the divs */
+    justify-content: space-between;
+    /* Adjusts the space between the divs */
 }
 
 .side-by-side {
-    width: 48%; /* Adjust the width as needed */
-    padding: 10px; /* Optional: Add padding for content spacing */
-    box-sizing: border-box; /* Ensures padding and border are included in the width */
+    width: 48%;
+    /* Adjust the width as needed */
+    padding: 10px;
+    /* Optional: Add padding for content spacing */
+    box-sizing: border-box;
+    /* Ensures padding and border are included in the width */
 
     color: #FFF;
-    font-family: OutFit,sans-serif;
+    font-family: OutFit, sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 735;

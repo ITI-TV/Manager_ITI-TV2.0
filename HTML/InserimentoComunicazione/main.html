@@ -1,66 +1,513 @@
-<div id="FormInserimentoComunicazione">
-    <div class="form-group">
-        <label for="TagComunicazione" id="TagComunicazioneLabel">TAG</label>
-        <select id="TagComunicazione">
-            <option value="niente">Seleziona un opzione</option>
-            <option value="Comunicazione">Comunicazione</option>
-            <option value="News">News</option>
-            <option value="Emergenza">Emergenza</option>
-        </select>
-    </div>
+<div class="container-fluid" id="MAIN">
+    <div class="row">
+        <!-- Form di Inserimento -->
+        <div id="BoxFormInserimentoComunicazione" class="col-lg-4 col-md-12">
+            <div id="BoxTestoInserimentoComunicazione">Nuova Comunicazione</div>
+            <div id="FormInserimentoComunicazione">
+                <div class="form-group">
+                    <label for="TagComunicazione" id="TagComunicazioneLabel">Tag</label>
+                    <select id="TagComunicazione" class="form-control">
+                        <option value="niente">Seleziona un'opzione</option>
+                        <option value="Comunicazione">Comunicazione</option>
+                        <option value="News">News</option>
+                        <option value="Emergenza">Emergenza</option>
+                    </select>
+                </div>
+            
+                <div id="DivFormNumeroComunicazione">
+                    <label for="NumeroComunicazione" id="labelNumeroComunicazione">Numero</label>
+                    <input type="number" id="NumeroComunicazione" class="form-control" required min="1" max="9999" placeholder="100">
+                </div>
+            
+                <div>
+                    <input type="text" id="TitoloComunicazione" class="form-control" max="55" min="1" placeholder="Titolo">
+                    <label for="TitoloComunicazione" id="labelTitoloComunicazione">0/55</label>
+                </div>
+            
+                <div>
+                    <textarea id="CorpoComunicazione" class="form-control" max="300" min="1" placeholder="Corpo"></textarea>
+                    <label for="CorpoComunicazione" id="labelCorpoComunicazione">0/300</label>
+                </div>
+            
+                <div class="form-group2">
+                    <label for="DataInizioComunicazione" id="labelDataInizioComunicazione">Data Inizio</label>
+                    <input type="date" id="DataInizioComunicazione" class="form-control" required>
+                </div>
+            
+                <div class="form-group2">
+                    <label for="DataFineComunicazione" id="labelDataFineComunicazione">Data Fine</label>
+                    <input type="date" id="DataFineComunicazione" class="form-control" required>
+                </div>
+            
+                <div class="form-group">
+                    <div id="Azioni">Azioni</div>
+                    <button id="InserisciComunicazione" class="btn btn-primary">
+                        <img src="img\UI\add.png" alt="Inserisci">
+                    </button>
+                </div>
+            </div>
+        </div>
 
-    <div class="form-group">
-        <label for="NumeroComunicazione" id="labelNumeroComunicazione">Numero</label>
-        <input type="number" id="NumeroComunicazione" required min="1" max="9999">
-    </div>
+        <!-- Box Anteprima Comunicazione -->
+        <div class="col-lg-4 col-md-12" id="BoxAnteprimaComunicazione">
+            <div id="BoxTestoAnteprimaComunicazione">Anteprima Comunicazione</div>
+            <div id="AnteprimaComunicazione" class="d-flex flex-column justify-content-between">
+                <div id="HeadComunicazioneAnteprima" class="d-flex">
+                    <div id="NumeroComunicazioneAnteprima" class="d-flex justify-content-center align-items-center">
+                        123
+                    </div>
+                    <div id="DivisoreNumeroTitoloComunicazioneAnteprima"></div>
+                    <div id="TitoloComunicazioneAnteprima" class="d-flex align-items-center justify-content-center">
+                        Titolo
+                    </div>
+                </div>
+                <div id="MainComunicazioneAnteprima" class="flex-grow-1">
+                    <div id="CorpoComunicazioneAnteprima">
+                        Testo della comunicazione in anteprima.
+                    </div>
+                </div>
+                <div id="FooterComunicazioneAnteprima">
+                    <div id="FirmaComunicazioneAnteprima">Firma</div>
+                </div>
+            </div>
+        </div>
 
-    <input type="text" id="TitoloComunicazione" max="55" min="1" placeholder="Titolo">
-    <label for="TitoloComunicazione" id="labelTitoloComunicazione">0/55</label>
-
-    <textarea id="CorpoComunicazione" max="300" min="1" placeholder="Corpo" ></textarea>
-    <label for="CorpoComunicazione" id="labelCorpoComunicazione">0/300</label>
-
-    <div class="form-group">
-        <label for="DataInizioComunicazione" id="labelDataInizioComunicazione">Data Inizio</label>
-        <input type="date" id="DataInizioComunicazione" required>
-    </div>
-
-    <div class="form-group">
-        <label for="DataFineComunicazione" id="labelDataFineComunicazione">Data Fine</label>
-        <input type="date" id="DataFineComunicazione" required>
-    </div>
-
-    <div class="form-group">
-        <div id="Azioni">Azioni</div>
-        <button id="InserisciComunicazione"><img src="img/UI/add.png"></button>
-    </div>
-</div>
-<div id="BoxTestoAnteprimaComunicazione">Anteprima Comunicazione</div>
-<div id="AnteprimaComunicazione">
-    <div id="HeadComunicazioneAnteprima">
-        <div id="NumeroComunicazioneAnteprima"></div>
-        <div id="DivisoreNumeroTitoloComunicazioneAnteprima"></div>
-        <div id="TitoloComunicazioneAnteprima"></div>
-    </div>
-    <div id="MainComunicazioneAnteprima">
-        <div id="CorpoComunicazioneAnteprima"></div>
-    </div>
-    <div id="FooterComunicazioneAnteprima">
-        <div id="FirmaComunicazioneAnteprima"></div>
-    </div>
-</div>
-<div id="BoxTestoUltimaComunicazione">Ultima Comunicazione</div>
-<div id="UltimaComunicazione">
-    <div id="HeadUltimaComunicazione">
-        <div id="NumeroUltimaComunizazione"></div>
-        <div id="DivisoreNumeroTitoloUltimaComunicazione"></div>
-        <div id="TitoloUltimaComunicazione"></div>
-    </div>
-    <div id="MainUltimaComunicazione">
-        <div id="CorpoUltimaComunicazione"></div>
-    </div>
-    <div id="FooterUltimaComunicazione">
-        <div id="FirmaUltimaComunicazione"></div>
+        <!-- Box Ultima Comunicazione -->
+        <div class="col-lg-4 col-md-12" id="BoxUltimaComunicazione">
+            <div id="BoxTestoUltimaComunicazione">Ultima Comunicazione</div>
+            <div id="UltimaComunicazione" class="d-flex flex-column justify-content-between">
+                <div id="HeadUltimaComunicazione" class="d-flex">
+                    <div id="NumeroUltimaComunizazione" class="d-flex justify-content-center align-items-center">
+                        456
+                    </div>
+                    <div id="DivisoreNumeroTitoloUltimaComunicazione"></div>
+                    <div id="TitoloUltimaComunicazione" class="d-flex align-items-center justify-content-center">
+                        Titolo Ultima Comunicazione
+                    </div>
+                </div>
+                <div id="MainUltimaComunicazione" class="flex-grow-1">
+                    <div id="CorpoUltimaComunicazione">
+                        Testo dell'ultima comunicazione.
+                    </div>
+                </div>
+                <div id="FooterUltimaComunicazione">
+                    <div id="FirmaUltimaComunicazione">Firma Ultima Comunicazione</div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <script src="js/Inserisci%20Comunicazione/main.js"></script>
+<style>
+
+
+    /* Stili personalizzati per i box */
+    #FormInserimentoComunicazione {
+        max-width: 30.125rem;
+        padding: 20px;
+        background-color: #004996;;
+        border: 1px solid #dee2e6;
+        border-radius: 0px 15px 15px 0px;
+        transform: translateY(3%);
+    }
+
+    #FormInserimentoComunicazione div{
+        margin: 0;
+        padding: 0;
+        height: auto;
+        width: auto;
+    }
+
+    
+    #FormInserimentoComunicazione div label{
+        margin: 0;
+    }
+
+    .error {
+        color: red;
+    }
+
+    
+        #FormInserimentoComunicazione label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    
+        #TagComunicazione,
+        #NumeroComunicazione,
+        #TitoloComunicazione,
+        #CorpoComunicazione,
+        #DataInizioComunicazione,
+        #DataFineComunicazione {
+            background-color: white;
+            color: #404040;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 100%;
+            font-family: OutFit;
+            font-size: 20px;
+        }
+
+    #TitoloComunicazione,
+    #CorpoComunicazione{
+        margin-bottom: 0;
+    }
+    
+        #TagComunicazione option {
+            color: black;
+        }
+    
+        #Azioni {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        #TagComunicazioneLabel {
+            max-width: 6.625rem;
+            max-height: 3.625rem;
+            color: #FFF;
+            text-align: center;
+            font-family: OutFit;
+            font-size: 3rem;
+            font-style: normal;
+            font-weight: 735;
+            line-height: normal;
+        }
+        
+        #TagComunicazione {
+            max-width: 264px;
+            max-height: 50px;
+            border-radius: 0.625rem;
+            background: #F4F4F4;
+            
+            color: #000;
+            font-family: OutFit;
+            font-size: 1.5rem;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-align: center;
+            margin-left: 15px;
+            margin-bottom: 0;
+
+            display: inline-block;
+        }
+    
+        #InserisciComunicazione {
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        #InserisciComunicazione img {
+            height: 55px;
+            width: 55px;
+        }
+
+        #labelNumeroComunicazione {
+            width: 222px;
+            height: 50px;
+        
+            color: #FFF;
+            font-family: Outfit;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-bottom: 15px;
+        }
+        
+        #NumeroComunicazione {
+            width: 115px;
+            height: 50px;
+            border-radius: 10px;
+            background: #F4F4F4;
+        
+            color: #404040;
+            text-align: center;
+            font-family: OutFit;
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 735;
+            line-height: normal;
+        
+            display: inline-block;
+            vertical-align: middle;
+        }
+    
+        #labelDataInizioComunicazione,
+        #labelDataFineComunicazione {
+            display: flex;
+            width: 248px;
+            height: 50px;
+            flex-direction: column;
+            justify-content: center;
+            color: #FFF;
+        
+            font-family: OutFit;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 735;
+            line-height: normal;
+
+            display: inline-block;
+        }
+
+        #labelTitoloComunicazione,
+        #labelCorpoComunicazione {
+            color: #EFEFEF;
+            font-family: Outfit;
+            text-align: end;
+            font-size: 16px;
+            font-style: normal;
+            line-height: normal;
+            
+        }
+
+#TitoloComunicazione {
+    max-width: 452px;
+    max-height: 50px;
+    border-radius: 10px;
+    background: #F4F4F4;
+
+    color: #404040;
+    text-align: center;
+    font-family: OutFit;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 735;
+    line-height: normal;
+}
+
+#CorpoComunicazione {
+    border-radius: 10px;
+    background: #F4F4F4;
+
+    max-width: 452px;
+    max-height: 165px;
+    color: #404040;
+    font-family: OutFit;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 735;
+    line-height: normal;
+}
+
+    #DataFineComunicazione,
+    #DataInizioComunicazione {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    background: #F4F4F4;
+    max-width: 175px;
+    max-height: 50px;
+
+    color: #404040;
+    text-align: center;
+    font-family: OutFit;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 735;
+    line-height: normal;
+
+    display: inline-block;
+}
+
+#Azioni {
+    color: #FFF;
+    font-family: OutFit;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 735;
+    line-height: normal;
+    display: inline-block;
+}
+
+#InserisciComunicazione {
+    width: 70px;
+    height: 70px;
+    border: 0;
+    background-color: #004996;
+}
+    
+
+    #AnteprimaComunicazione,
+    #UltimaComunicazione {
+        max-width: 484.215px;
+        max-height: 40.9375rem;
+        background-color: transparent;
+        border: 2.5px solid #FFF;
+        background: #205295;
+        border-radius: 15px;
+        height: 100%;
+    }
+
+
+
+    #NumeroComunicazione,
+    #TitoloComunicazione,
+    #CorpoComunicazione,
+    #DataInizioComunicazione,
+    #DataFineComunicazione,
+    #InserisciComunicazione {
+        pointer-events: none;
+    }
+
+    #BoxTestoAnteprimaComunicazione,
+    #BoxTestoUltimaComunicazione {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    #BoxAnteprimaComunicazione,
+    #BoxUltimaComunicazione,
+    #BoxFormInserimentoComunicazione {
+        padding: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: transparent;
+        border: 0;
+        border-radius: 8px;
+    }
+
+    #BoxFormInserimentoComunicazione{
+        padding-left: 0px;
+    }
+
+    #BoxTestoInserimentoComunicazione{
+        color: #FF473D;
+        font-family: OutFit;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #000;
+        padding-left: 20px;
+    }
+
+    #BoxTestoAnteprimaComunicazione {
+        color: #FF473D;
+        font-family: OutFit;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #000;
+    }
+    
+    #BoxTestoUltimaComunicazione{
+        color: #FF473D;
+        font-family: OutFit;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #000;
+    }
+    
+
+    /* Gestione delle intestazioni e corpo delle comunicazioni */
+    #HeadComunicazioneAnteprima,
+    #HeadUltimaComunicazione {
+        width: 100%;
+        height: 100px;
+        background-color: #004996;
+        border-bottom: 2px solid #33B4FE;
+        border-radius: 15px 15px 0 0;
+        align-items: center;
+    }
+
+    #NumeroComunicazioneAnteprima,
+    #NumeroUltimaComunizazione {
+        width: 115px;
+        height: 63px;
+        color: #FFF;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 700;
+        background-color: transparent;
+        flex-shrink: 0;
+    }
+
+    #DivisoreNumeroTitoloComunicazioneAnteprima,
+    #DivisoreNumeroTitoloUltimaComunicazione {
+        width: 3px;
+        height: 85px;
+        background: #FFF;
+        flex-shrink: 0;
+    }
+
+    #TitoloComunicazioneAnteprima,
+    #TitoloUltimaComunicazione {
+        color: #FFF;
+        text-align: center;
+        font-size: 25px;
+        flex-grow: 1;
+        word-break: break-word;
+        /* Spezza le parole lunghe per andare a capo */
+        overflow-wrap: break-word;
+        /* Assicura che il contenuto non esca dal box */
+    }
+
+    #MainComunicazioneAnteprima,
+    #MainUltimaComunicazione {
+        padding: 20px;
+        background-color: #205295;
+        color: #FFF;
+        font-size: 25px;
+        text-align: justify;
+        word-break: break-word;
+        /* Spezza le parole lunghe per andare a capo */
+        overflow-wrap: break-word;
+        /* Assicura che il contenuto non esca dal box */
+    }
+
+    #FooterComunicazioneAnteprima,
+    #FooterUltimaComunicazione {
+        height: 40px;
+        background-color: #233284;
+        border-radius: 0 0 15px 15px;
+        border-top: 5px solid #0E284B;
+        text-align: left;
+        font-size: 30px;
+        font-style: normal;
+        line-height: normal;
+        padding-left: 20px;
+        padding-bottom: 3px;
+        color: #FFF;
+    }
+
+    /* Responsività */
+    @media (max-width: 992px) {
+
+        #FormInserimentoComunicazione,
+        #AnteprimaComunicazione,
+        #UltimaComunicazione {
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+    }
+
+    /* Overflow gestione per schermi molto piccoli */
+    @media (max-width: 768px) {
+
+        #AnteprimaComunicazione,
+        #UltimaComunicazione {
+            overflow-x: auto;
+        }
+
+        #FormInserimentoComunicazione,
+        #AnteprimaComunicazione,
+        #UltimaComunicazione {
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+    }
+</style>

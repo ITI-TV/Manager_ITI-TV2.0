@@ -1,13 +1,275 @@
-
-<nav>
-    <ul>
-        <li><a href="#" data-page="home" style="border-radius: 15px 0 0 15px;padding: 20px 10px">Home</a></li>
-        <li><a href="#" data-page="inserimento-comunicazione">Nuova Comunicazione </a></li>
-        <li><a href="#" data-page="inserimento-componente">Nuovo Componente Aggiuntivo </a></li>
-        <li><a href="#" data-page="visualizza-comunicazioni">Visualizza Comunicazioni </a></li>
-        <li><a href="#" data-page="visualizza-componenti">Visualizza Componenti Aggiuntivi </a></li>
-        <li><a href="#" data-page="eventi-giornalieri">Eventi Giornalieri</a></li>
-        <li><a href="#" data-page="informazioni-generali">Informazioni Generali</a></li>
-        <li><a href="#" data-page="contatti" style="border-radius: 0 15px 15px 0; padding: 20px 10px">Contatti</a></li>
-    </ul>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg" id="mainNavbar">
+    <div class="container" id="containerNavbar">
+        <button class="navbar-toggler" id="hamburgerButton" type="button" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" data-page="home" id="home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="inserimento-comunicazione">Nuova Comunicazione</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="inserimento-componente">Nuovo Componente Aggiuntivo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="visualizza-comunicazioni">Visualizza Comunicazioni</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="visualizza-componenti">Visualizza Componenti Aggiuntivi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="eventi-giornalieri">Eventi Giornalieri</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="informazioni-generali">Informazioni Generali</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-page="contatti" id="contatti">Contatti</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </nav>
+
+
+<!-- Stili CSS -->
+<style>
+    /* Navbar stili per schermi grandi */
+    .navbar {
+        width: 100%;
+        background-color: #005cd7;
+        /* Sfondo della navbar per schermi grandi */
+        z-index: 1;
+    }
+
+    #hamburgerButton {
+        position: absolute;
+        top: -20px;
+        right: 20px;
+        background: transparent;
+        border: none;
+        z-index: 1000;
+    }
+
+
+
+    .collapse.show {
+        background-color: #005CD7;
+        /* Sfondo scuro quando il menu è visibile */
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 100vw;
+        /* Occupa tutta la larghezza dello schermo */
+        max-width: 400px;
+        /* Limita la larghezza massima del menu */
+        z-index: 1000;
+        transition: transform 0.3s ease;
+        /* Transizione per effetto slide-in */
+        transform: translateX(100%);
+        /* Nascondi il menu inizialmente */
+    }
+
+    .collapse.show.show-menu {
+        transform: translateX(0);
+        /* Mostra il menu quando è visibile */
+    }
+
+    #containerNavbar {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 999999999999999999999999999999999999999999px;
+        /* Centra i bottoni nella navbar */
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        gap: 10px;
+        /* Spazio tra i bottoni */
+        width: 100%;
+        /* Occupa tutta la larghezza del menu */
+    }
+
+    /*larghezza dei bottoni equivalente alla quantità di caratteri*/
+    .nav-link {
+        width: 100%;
+        /* Larghezza del bottone riempie la colonna */
+
+    }
+
+
+    .nav-link {
+        color: white !important;
+        background-color: #04326f;
+        /* Sfondo del bottone */
+        padding: 10px;
+        text-align: center;
+        /* Allinea il testo al centro orizzontalmente */
+        display: flex;
+        align-items: center;
+        /* Allinea il testo al centro verticalmente */
+        justify-content: center;
+        /* Allinea il testo al centro orizzontalmente */
+        transition: background-color 0.3s ease;
+        text-decoration: none;
+        width: 100%;
+        /* Larghezza del bottone riempie la colonna */
+        height: 60px;
+        /* Altezza del bottone */
+        box-sizing: border-box;
+    }
+
+    .nav-link:hover,
+    .nav-link:focus {
+        background-color: #479bff;
+        /* Sfondo del bottone al passaggio del cursore o selezionato */
+    }
+
+    .nav-link.active {
+        background-color: #479bff;
+        /* Sfondo del bottone attivo */
+    }
+
+    @media (min-width: 1400px) {
+        .nav-item {
+            flex: 1;
+        }
+        #home{
+            border-radius: 15px 0px 0px 15px;
+        }
+        #contatti{
+            border-radius: 0px 15px 15px 0px;
+        }
+    }
+
+    @media (min-width: 993px){
+        #home{
+            border-radius: 15px 0px 0px 15px;
+        }
+        #contatti{
+            border-radius: 0px 15px 15px 0px;
+        }
+    }
+    /* Navbar per schermi piccoli */
+    @media (max-width: 992px) {
+        .navbar {
+            background-color: transparent;
+            /* Sfondo trasparente per schermi piccoli */
+        }
+
+
+        #hamburgerButton {
+            position: absolute;
+            top: -52px;
+            right: 90px;
+            background: transparent;
+            border: none;
+        }
+
+        .navbar-nav {
+            text-align: right;
+        }
+
+        #home
+        #contatti{
+            border: radius 0 0 0 0;
+        }
+
+        .collapse.show {
+            background-color: #005CD7;
+            position: absolute;
+            top: 0px;
+            right: 80px;
+            width: 200px;
+            /* Imposta la larghezza del menu per schermi piccoli */
+            transform: translateX(100%);
+            /* Nascondi il menu inizialmente */
+            transition: transform 0.3s ease;
+            /* Transizione per effetto slide-in */
+        }
+
+        .collapse.show.show-menu {
+            transform: translateX(0);
+            /* Mostra il menu quando è visibile */
+        }
+
+        .nav-link {
+            /* Rettangoli con bordo nero sottile */
+            border: 1px solid black;
+            border-radius: 2px;
+
+        }
+
+        /* altezza massima del menu */
+        .navbar-expand-lg .navbar-collapse {
+            max-height: 70vh;
+            overflow-y: auto;
+            gap: 0px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        #hamburgerButton {
+            position: absolute;
+            top: -47px;
+            right: 60px;
+            background: transparent;
+            border: none;
+        }
+
+        .collapse.show {
+            background-color: #005CD7;
+            position: absolute;
+            top: 0px;
+            right: 50px;
+            width: 200px;
+            /* Imposta la larghezza del menu per schermi piccoli */
+            transform: translateX(100%);
+            /* Nascondi il menu inizialmente */
+            transition: transform 0.3s ease;
+            /* Transizione per effetto slide-in */
+        }
+
+        #home
+        #contatti{
+            border: radius 0 0 0 0;
+        }
+    }
+
+    @media (max-width: 576px) {
+        #hamburgerButton {
+            position: absolute;
+            top: -45px;
+            right: 50px;
+            background: transparent;
+            border: none;
+        }
+
+        .collapse.show {
+            background-color: #005CD7;
+            position: absolute;
+            top: 0px;
+            right: 40px;
+            width: 200px;
+            /* Imposta la larghezza del menu per schermi piccoli */
+            transform: translateX(100%);
+            /* Nascondi il menu inizialmente */
+            transition: transform 0.3s ease;
+            /* Transizione per effetto slide-in */
+        }
+
+        #home
+        #contatti{
+            border: radius 0 0 0 0;
+        }
+    }
+</style>

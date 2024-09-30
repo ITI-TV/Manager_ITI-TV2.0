@@ -55,6 +55,7 @@ function startVisualizzazioneComunicazioni(){
                 riga.appendChild(azioniComunicazione);
                 document.getElementById('ListaComunicazioni').appendChild(riga);
             }
+    
         });
 
 }

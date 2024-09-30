@@ -1,44 +1,352 @@
-<div id="AnteprimaComponente">
-    <div id="boxImmagineComponentiAggiuntivi">
-        <img id="ImmagineComponentiAggiuntivi" src="#" alt="Nessuna immagine disponibile">
-    </div>
-    <div id="boxHeaderComponentiAggiuntivi">
-        <div id="TitoloComponentiAggiuntivi"></div>
-    </div>
-    <div id="TestoComponentiAggiuntivi"></div>
-    <div id="boxProfComponentiAggiuntivi">
-        <div id="ProfComponentiAggiuntivi"></div>
-    </div>
-</div>
+<div id="ContainerComponentiAggiuntivi" class="container-fluid">
+    <div class="row" id="MainComponentiAggiuntivi">
+        <!-- Form Componenti Aggiuntivi -->
+        <div id="FormComponentiAggiuntivi" class="col-lg-3 col-md-12">
+            <div class="form-group">
+                <label for="formTitoloComponentiAggiuntivi" id="LabelTitoloComponente">Titolo</label>
+                <input type="text" id="formTitoloComponentiAggiuntivi" name="TitoloComponentiAggiuntivi"
+                    class="form-control" placeholder="Titolo">
+                <label for="formTitoloComponentiAggiuntivi" id="textFormTitoloComponentiAggiuntivi">0/100</label>
+            </div>
 
-<div id="boxFormComponentiAggiuntivi">
+            <div class="form-group" style="transform: translateY(-15px);">
+                <label for="formTestoComponentiAggiuntivi" id="LabelCorpoComponente">Corpo</label>
+                <textarea id="formTestoComponentiAggiuntivi" name="TestoComponentiAggiuntivi" class="form-control"
+                    placeholder="Corpo"></textarea>
+                <label for="formTestoComponentiAggiuntivi" id="textFormTestoComponentiAggiuntivi">0/625</label>
+            </div>
 
+            <div class="form-group" style="transform: translateY(-15px);">
+                <label for="formDataInizioComponentiAggiuntivi" id="textFormDataInizioComponentiAggiuntivi">Data
+                    Inizio</label>
+                <input type="date" id="formDataInizioComponentiAggiuntivi" name="DataInizioComponentiAggiuntivi"
+                    class="form-control">
+            </div>
 
-    <input type="text" id="formTitoloComponentiAggiuntivi" name="TitoloComponentiAggiuntivi" placeholder="Titolo">
-    <label for="formTitoloComponentiAggiuntivi" id="textFormTitoloComponentiAggiuntivi">0/100</label>
+            <div class="form-group" style="transform: translateY(-15px);">
+                <label for="formDataFineComponentiAggiuntivi" id="textFormDataFineComponentiAggiuntivi">Data
+                    Fine</label>
+                <input type="date" id="formDataFineComponentiAggiuntivi" name="DataFineComponentiAggiuntivi"
+                    class="form-control">
+            </div>
 
+            <div class="form-group" style="transform: translateY(-15px);">
+                <label for="formImmagineComponentiAggiuntivi" id="textFormImmagineComponentiAggiuntivi">Immagine</label>
+                <label id="upload">
+                    <input type="file" id="formImmagineComponentiAggiuntivi" name="ImmagineComponentiAggiuntivi"
+                        accept="image/*" hidden>
+                </label>
+            </div>
 
-    <textarea id="formTestoComponentiAggiuntivi" name="TestoComponentiAggiuntivi" placeholder="Corpo"></textarea>
-    <label for="formTestoComponentiAggiuntivi" id="textFormTestoComponentiAggiuntivi">0/625</label>
-    <div class="form-group">
-        <label for="formDataInizioComponentiAggiuntivi" id="textFormDataInizioComponentiAggiuntivi">Data Inizio</label>
-        <input type="date" id="formDataInizioComponentiAggiuntivi" name="DataInizioComponentiAggiuntivi">
-    </div>
+            <div class="form-group" style="transform: translateY(-15px);">
+                <div id="Azioni2">Azioni</div>
+                <button type="submit" id="submitComponenteAggiuntivo" class="btn btn-primary"></button>
+            </div>
+        </div>
 
-    <div class="form-group">
-        <label for="formDataFineComponentiAggiuntivi" id="textFormDataFineComponentiAggiuntivi">Data Fine</label>
-        <input type="date" id="formDataFineComponentiAggiuntivi" name="DataFineComponentiAggiuntivi">
-    </div>
-
-    <div class="form-group">
-        <label for="formImmagineComponentiAggiuntivi" id="textFormImmagineComponentiAggiuntivi">Immagine </label>
-        <label id="upload"><input type="file" id="formImmagineComponentiAggiuntivi" name="ImmagineComponentiAggiuntivi" accept="image/*" hidden=""></label>
-    </div>
-
-    <div class="form-group">
-        <div id="Azioni2">Azioni</div>
-        <button type="submit" id="submitComponenteAggiuntivo"></button>
+        <!-- Anteprima Componenti Aggiuntivi -->
+        <div id="AnteprimaComponentiAggiuntivi" class="col-lg-8 col-md-12">
+            <div id="boxHeaderComponentiAggiuntivi">
+                <div id="TitoloComponentiAggiuntivi"></div>
+            </div>
+            <div id="boxContentComponentiAggiuntivi">
+                <div id="TestoComponentiAggiuntivi"></div>
+                <div id="boxImmagineComponentiAggiuntivi">
+                    <img id="ImmagineComponentiAggiuntivi" src="#" alt="Nessuna immagine disponibile">
+                </div>
+            </div>
+            <div id="boxProfComponentiAggiuntivi">
+                <div id="ProfComponentiAggiuntivi"></div>
+            </div>
+        </div>
     </div>
 </div>
 
 <script src="js/Inserisci%20Componente%20Aggiuntivo/main.js"></script>
+<style>
+    #MainComponentiAggiuntivi {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Stili per il contenitore principale */
+    #ContainerComponentiAggiuntivi {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .form-group{
+        margin-left: 13px;
+    }
+
+    /* Stili per il form */
+    #FormComponentiAggiuntivi {
+        width: 500px;
+        height: 690px;
+    
+        border-radius: 0px 15px 15px 0px;
+        border-top: 2px solid #FFF;
+        border-right: 2px solid #FFF;
+        border-bottom: 2px solid #FFF;
+        background: #004996;
+
+        margin-right: 30px;
+        padding: 0px;
+        /*traslate di x per far si che sia attaccato al bordo sinistro*/
+        transform: translateX(-12px);
+        
+    }
+
+    #LabelTitoloComponente,
+    #LabelCorpoComponente{
+        width: 222px;
+    height: 50px;
+    color: #FFF;
+    font-family: Outfit;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 15px;
+    }
+    
+    #formTitoloComponentiAggiuntivi {
+        width: 452px;
+        height: 50px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        background: #F4F4F4;
+    
+        color: #404040;
+        font-family: Outfit, sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;
+    }
+    
+    #textFormTitoloComponentiAggiuntivi,
+    #textFormTestoComponentiAggiuntivi {
+        color: #EFEFEF;
+        font-family: Outfit, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    
+        text-align: end;
+    
+        padding: 0;
+        box-sizing: border-box;
+        transform: translateX(950%);
+    }
+    
+    #formTestoComponentiAggiuntivi {
+        width: 452px;
+        height: 235px;
+
+        border-radius: 10px;
+        background: #F4F4F4;
+    
+        color: #404040;
+        font-family: Outfit, sans-serif;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;;
+    }
+    
+    #textFormDataInizioComponentiAggiuntivi,
+    #textFormDataFineComponentiAggiuntivi,
+    #textFormImmagineComponentiAggiuntivi {
+        display: flex;
+        width: 248px;
+        height: 50px;
+        flex-direction: column;
+        justify-content: center;
+        color: #FFF;
+    
+        font-family: OutFit;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;
+
+        display: inline-block;
+    }
+    
+    #formDataFineComponentiAggiuntivi,
+    #formDataInizioComponentiAggiuntivi {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 10px;
+        background: #F4F4F4;
+        max-width: 175px;
+        max-height: 50px;
+    
+        color: #404040;
+        text-align: center;
+        font-family: OutFit;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;
+    
+        display: inline-block;
+    }
+    
+    #upload {
+        background-image: url('img/UI/upload.png');
+        border: none;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background-size: 100% 100%;
+        color: transparent;
+    
+        margin-left: 80px;
+        transform: translateY(10px);
+    }
+    
+    #Azioni2 {
+        color: #FFF;
+        font-family: OutFit;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;
+        display: inline-block;
+    }
+    
+    #submitComponenteAggiuntivo {
+        border: none;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background-size: 100% 100%;
+        color: transparent;
+        background-image: url("img/UI/add.png");
+
+        margin-left: 100px;
+        transform: translateY(-10px);
+    }
+
+
+    /* Stili per il box di anteprima */
+    #AnteprimaComponentiAggiuntivi {
+        max-width: 100%;
+        border-radius: 15px;
+        border: 2.5px solid #E09819;
+        background: #0E284B;
+        margin-bottom: 20px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        /* Per gestire la disposizione verticale */
+        height: 100%;
+        /* Per permettere alla firma di posizionarsi in fondo */
+    }
+    #AnteprimaComponentiAggiuntivi{
+        transform: translateY(1%);
+    }
+
+    #boxHeaderComponentiAggiuntivi {
+        width: 100%;
+        height: 90px;
+        background-color: #004996;
+        border-bottom: 2px solid #33B4FE;
+        border-radius: 15px 15px 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #TitoloComponentiAggiuntivi {
+        color: #FFF;
+        font-size: 34px;
+        font-weight: 550;
+        text-align: center;
+    }
+
+    #boxContentComponentiAggiuntivi {
+        display: flex;
+        /* Utilizza flexbox per organizzare testo e immagine */
+        flex: 1;
+        /* Permette di espandersi */
+    }
+
+    #TestoComponentiAggiuntivi {
+        color: #FFF;
+        font-size: 28px;
+        font-weight: 300;
+        width: 50%;
+        /* Occupare metà dello spazio disponibile */
+    }
+
+    #boxImmagineComponentiAggiuntivi {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        /* Occupare metà dello spazio disponibile */
+    }
+
+    #ImmagineComponentiAggiuntivi {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+    }
+
+    #boxProfComponentiAggiuntivi {
+        width: 100%;
+        height: 40px;
+        background-color: #004996;
+        border-top: 2.5px solid #E09819;
+        border-radius: 0 0 15px 15px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 25px;
+    }
+
+    #ProfComponentiAggiuntivi {
+        color: #FFF;
+        font-size: 24px;
+    }
+
+    /* Responsività */
+    @media (max-width: 992px) {
+
+        #FormComponentiAggiuntivi,
+        #AnteprimaComponentiAggiuntivi {
+            margin-bottom: 20px;
+            width: 90%;
+        }
+
+
+        #AnteprimaComponentiAggiuntivi {
+            order: 2;
+        }
+
+    }
+
+    @media (max-width: 768px) {
+
+        #TestoComponentiAggiuntivi,
+        #boxImmagineComponentiAggiuntivi {
+            width: 100%;
+        }
+
+        #AnteprimaComponentiAggiuntivi{
+            transform: translateY(10%);
+        }
+
+    }
+</style>

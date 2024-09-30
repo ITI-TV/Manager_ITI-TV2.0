@@ -1,32 +1,189 @@
-<div id="AnteprimaVisualizzazioneComunicazione">
-    <div id="TestoAnteprimaVisualizzazioneComunicazione">Anteprima Comunicazione</div>
-    <div id="BoxAnteprimaVisualizzazioneComunicazione">
-        <div id="HeadVisualizzazioneComunicazioneAnteprima">
-            <div id="NumeroVisualizzazioneComunicazioneAnteprima"></div>
-            <div id="DivisoreNumeroTitoloVisualizzazioneComunicazioneAnteprima"></div>
-            <div id="TitoloVisualizzazioneComunicazioneAnteprima"></div>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Box Anteprima Visualizzazione Comunicazione -->
+        <div id="AnteprimaVisualizzazioneComunicazione" class="col-lg-4 col-md-12">
+            <div id="TestoAnteprimaVisualizzazioneComunicazione">Anteprima Comunicazione</div>
+            <div id="BoxAnteprimaVisualizzazioneComunicazione" class="d-flex flex-column ">
+                <div id="HeadVisualizzazioneComunicazioneAnteprima" class="d-flex align-items-center">
+                    <div id="NumeroVisualizzazioneComunicazioneAnteprima"
+                        class="d-flex justify-content-center align-items-center">
+                        001
+                    </div>
+                    <div id="DivisoreNumeroTitoloVisualizzazioneComunicazioneAnteprima"></div>
+                    <div id="TitoloVisualizzazioneComunicazioneAnteprima"
+                        class="d-flex align-items-center justify-content-center">
+                        Titolo della Comunicazione
+                    </div>
+                </div>
+                <div id="MainVisualizzazioneComunicazioneAnteprima">
+                    <div id="CorpoVisualizzazioneComunicazioneAnteprima">
+                        Questo è il testo del corpo della comunicazione visualizzato in anteprima.
+                    </div>
+                </div>
+                <div id="FooterVisualizzazioneComunicazioneAnteprima">
+                    <div id="FirmaVisualizzazioneComunicazioneAnteprima">Firma del docente</div>
+                </div>
+            </div>
         </div>
-        <div id="MainVisualizzazioneComunicazioneAnteprima">
-            <div id="CorpoVisualizzazioneComunicazioneAnteprima"></div>
-        </div>
-        <div id="FooterVisualizzazioneComunicazioneAnteprima">
-            <div id="FirmaVisualizzazioneComunicazioneAnteprima"></div>
+
+        <!-- Lista Comunicazioni Registrate -->
+        <div id="ListaComunicazioniRegistrate" class="col-lg-8 col-md-12">
+            <table id="ListaComunicazioni" class="table table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <th>Num.</th>
+                        <th>Titolo</th>
+                        <th>Corpo</th>
+                        <th>Data Inizio</th>
+                        <th>Data Fine</th>
+                        <th>Tipo</th>
+                        <th>Docente</th>
+                        <th>Azioni</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Riempito da JS -->
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
-<div id="ListaComunicazioniRegistrate">
-    <table id="ListaComunicazioni">
-        <tr>
-            <th>Num.</th>
-            <th>Titolo</th>
-            <th>Corpo</th>
-            <th>Data Inizio</th>
-            <th>Data Fine</th>
-            <th>Tipo</th>
-            <th>Docente</th>
-            <th>Azioni</th>
-        </tr>
-        <!--Riempito da JS-->
-    </table>
-</div>
+
 <script src="js/Visualizza%20Comunicazioni/main.js"></script>
+
+<style>
+    #TestoAnteprimaVisualizzazioneComunicazione {
+        color: #FF473D;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #232323;
+        font-family: Outfit;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    /* Stili personalizzati per la visualizzazione della comunicazione */
+    #BoxAnteprimaVisualizzazioneComunicazione {
+        max-width: 30.26344rem;
+        max-height: 655px;
+        border-radius: 0.9375rem;
+        border: 2.5px solid #FFF;
+        height: 100%;
+    }
+
+    #HeadVisualizzazioneComunicazioneAnteprima {
+        width: 100%;
+        height: 100px;
+        background-color: #004996;
+        border-bottom: 2px solid #33B4FE;
+        border-radius: 15px 15px 0 0;
+        align-items: center;
+    }
+
+    #NumeroVisualizzazioneComunicazioneAnteprima {
+        width: 115px;
+        height: 63px;
+        color: #FFF;
+        text-align: center;
+        font-size: 50px;
+        font-weight: 700;
+        background-color: transparent;
+        flex-shrink: 0;
+    }
+
+    #DivisoreNumeroTitoloVisualizzazioneComunicazioneAnteprima {
+        width: 3px;
+        height: 85px;
+        background: #FFF;
+        flex-shrink: 0;
+    }
+
+    #TitoloVisualizzazioneComunicazioneAnteprima {
+        color: #FFF;
+        text-align: center;
+        font-size: 25px;
+        flex-grow: 1;
+        word-break: break-word;
+        /* Spezza le parole lunghe per andare a capo */
+        overflow-wrap: break-word;
+        /* Assicura che il contenuto non esca dal box */
+    }
+
+    #MainVisualizzazioneComunicazioneAnteprima {
+        height: 100%;
+        background-color: #205295;;
+        text-align: justify;
+        color: #FFF;
+        font-family: 'OutFit', sans-serif;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 400;
+        word-break: break-word;
+        /* Spezza le parole lunghe per andare a capo */
+        overflow-wrap: break-word;
+        /* Assicura che il contenuto non esca dal box */
+    }
+
+    #FooterVisualizzazioneComunicazioneAnteprima {
+        height: 40px;
+        background-color: #233284;
+        border-radius: 0 0 15px 15px;
+        border-top: 5px solid #0E284B;
+        text-align: left;
+        padding-left: 20px;
+        color: #FFF;
+    }
+
+
+    /* Stili per la tabella */
+    #ListaComunicazioni {
+        width: 100%;
+        border: 5px solid transparent;
+        border-collapse: collapse;
+    }
+
+    #ListaComunicazioni th,
+    #ListaComunicazioni td {
+        text-align: center;
+        vertical-align: middle;
+
+        color: #F4F4F4;
+        text-align: center;
+        font-family: Outfit, sans-serif;
+    }
+
+    #ListaComunicazioni th {
+        background: #005CD7;
+        color: #F4F4F4;
+        text-align: center;
+        font-family: Outfit, sans-serif;
+        padding: 10px;
+    }
+
+    #ListaComunicazioni td {
+        padding: 10px;
+    }
+
+    /* Aggiunta di overflow per scroll orizzontale sulla tabella */
+    #ListaComunicazioniRegistrate {
+        overflow-x: auto;
+    }
+
+    .BottoneVisualizzaComunicazione {
+        background: #005CD7;
+        border: 0;
+    }
+
+    /* Responsività */
+    @media (max-width: 768px) {
+        #AnteprimaVisualizzazioneComunicazione {
+            margin-bottom: 100px;
+        }
+
+        /* Gestione overflow per la tabella su schermi piccoli */
+        #ListaComunicazioniRegistrate {
+            overflow-x: scroll;
+        }
+    }
+</style>
