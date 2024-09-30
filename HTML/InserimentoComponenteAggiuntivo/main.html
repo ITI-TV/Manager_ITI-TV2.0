@@ -9,28 +9,28 @@
                 <label for="formTitoloComponentiAggiuntivi" id="textFormTitoloComponentiAggiuntivi">0/100</label>
             </div>
 
-            <div class="form-group">
+            <div class="form-group" style="transform: translateY(-15px);">
                 <label for="formTestoComponentiAggiuntivi" id="LabelCorpoComponente">Corpo</label>
                 <textarea id="formTestoComponentiAggiuntivi" name="TestoComponentiAggiuntivi" class="form-control"
                     placeholder="Corpo"></textarea>
                 <label for="formTestoComponentiAggiuntivi" id="textFormTestoComponentiAggiuntivi">0/625</label>
             </div>
 
-            <div class="form-group">
+            <div class="form-group" style="transform: translateY(-15px);">
                 <label for="formDataInizioComponentiAggiuntivi" id="textFormDataInizioComponentiAggiuntivi">Data
                     Inizio</label>
                 <input type="date" id="formDataInizioComponentiAggiuntivi" name="DataInizioComponentiAggiuntivi"
                     class="form-control">
             </div>
 
-            <div class="form-group">
+            <div class="form-group" style="transform: translateY(-15px);">
                 <label for="formDataFineComponentiAggiuntivi" id="textFormDataFineComponentiAggiuntivi">Data
                     Fine</label>
                 <input type="date" id="formDataFineComponentiAggiuntivi" name="DataFineComponentiAggiuntivi"
                     class="form-control">
             </div>
 
-            <div class="form-group">
+            <div class="form-group" style="transform: translateY(-15px);">
                 <label for="formImmagineComponentiAggiuntivi" id="textFormImmagineComponentiAggiuntivi">Immagine</label>
                 <label id="upload">
                     <input type="file" id="formImmagineComponentiAggiuntivi" name="ImmagineComponentiAggiuntivi"
@@ -38,11 +38,9 @@
                 </label>
             </div>
 
-            <div class="form-group">
+            <div class="form-group" style="transform: translateY(-15px);">
                 <div id="Azioni2">Azioni</div>
-                <button type="submit" id="submitComponenteAggiuntivo" class="btn btn-primary">
-                    <img src="img/UI/add.png" alt="Inserisci">
-                </button>
+                <button type="submit" id="submitComponenteAggiuntivo" class="btn btn-primary"></button>
             </div>
         </div>
 
@@ -79,18 +77,167 @@
         margin-top: 20px;
     }
 
+    .form-group{
+        margin-left: 13px;
+    }
+
     /* Stili per il form */
     #FormComponentiAggiuntivi {
-        border-radius: 0 15px 15px 0;
-        border: 2px solid #FFF;
+        width: 500px;
+        height: 690px;
+    
+        border-radius: 0px 15px 15px 0px;
+        border-top: 2px solid #FFF;
+        border-right: 2px solid #FFF;
+        border-bottom: 2px solid #FFF;
         background: #004996;
+
         margin-right: 30px;
         padding: 0px;
         /*traslate di x per far si che sia attaccato al bordo sinistro*/
         transform: translateX(-12px);
-
-        /* Aggiunto padding per il form */
+        
     }
+
+    #LabelTitoloComponente,
+    #LabelCorpoComponente{
+        width: 222px;
+    height: 50px;
+    color: #FFF;
+    font-family: Outfit;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 15px;
+    }
+    
+    #formTitoloComponentiAggiuntivi {
+        width: 452px;
+        height: 50px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        background: #F4F4F4;
+    
+        color: #404040;
+        font-family: Outfit, sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;
+    }
+    
+    #textFormTitoloComponentiAggiuntivi,
+    #textFormTestoComponentiAggiuntivi {
+        color: #EFEFEF;
+        font-family: Outfit, sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+    
+        text-align: end;
+    
+        padding: 0;
+        box-sizing: border-box;
+        transform: translateX(950%);
+    }
+    
+    #formTestoComponentiAggiuntivi {
+        width: 452px;
+        height: 235px;
+
+        border-radius: 10px;
+        background: #F4F4F4;
+    
+        color: #404040;
+        font-family: Outfit, sans-serif;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;;
+    }
+    
+    #textFormDataInizioComponentiAggiuntivi,
+    #textFormDataFineComponentiAggiuntivi,
+    #textFormImmagineComponentiAggiuntivi {
+        display: flex;
+        width: 248px;
+        height: 50px;
+        flex-direction: column;
+        justify-content: center;
+        color: #FFF;
+    
+        font-family: OutFit;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;
+
+        display: inline-block;
+    }
+    
+    #formDataFineComponentiAggiuntivi,
+    #formDataInizioComponentiAggiuntivi {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 10px;
+        background: #F4F4F4;
+        max-width: 175px;
+        max-height: 50px;
+    
+        color: #404040;
+        text-align: center;
+        font-family: OutFit;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;
+    
+        display: inline-block;
+    }
+    
+    #upload {
+        background-image: url('img/UI/upload.png');
+        border: none;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background-size: 100% 100%;
+        color: transparent;
+    
+        margin-left: 80px;
+        transform: translateY(10px);
+    }
+    
+    #Azioni2 {
+        color: #FFF;
+        font-family: OutFit;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 735;
+        line-height: normal;
+        display: inline-block;
+    }
+    
+    #submitComponenteAggiuntivo {
+        border: none;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background-size: 100% 100%;
+        color: transparent;
+        background-image: url("img/UI/add.png");
+
+        margin-left: 100px;
+        transform: translateY(-10px);
+    }
+
 
     /* Stili per il box di anteprima */
     #AnteprimaComponentiAggiuntivi {
@@ -105,6 +252,9 @@
         /* Per gestire la disposizione verticale */
         height: 100%;
         /* Per permettere alla firma di posizionarsi in fondo */
+    }
+    #AnteprimaComponentiAggiuntivi{
+        transform: translateY(1%);
     }
 
     #boxHeaderComponentiAggiuntivi {
@@ -180,6 +330,7 @@
             width: 90%;
         }
 
+
         #AnteprimaComponentiAggiuntivi {
             order: 2;
         }
@@ -192,5 +343,10 @@
         #boxImmagineComponentiAggiuntivi {
             width: 100%;
         }
+
+        #AnteprimaComponentiAggiuntivi{
+            transform: translateY(10%);
+        }
+
     }
 </style>
