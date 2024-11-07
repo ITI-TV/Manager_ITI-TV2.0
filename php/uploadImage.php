@@ -3,37 +3,22 @@ session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_FILES['file']) && $_FILES['file']['error'] == 0) {
-        $uploadDirectory = 'C:/xampp/htdocs/TV ITI-TV 2.0/IMG/Componenti Aggiuntivi/';
-        $fileName = $_SESSION['username'] . '_' . time() . '_' . $_FILES['file']['name'];
-        $targetFilePath = $uploadDirectory . $fileName;
+        // Leggi il contenuto del file caricato
+        $fileData = file_get_contents($_FILES['file']['tmp_name']);
+        
+        // Ottieni il tipo MIME corretto
+        $fileType = mime_content_type($_FILES['file']['tmp_name']);
+        $allowedTypes = array('image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp', 'image/svg+xml', 'image/bmp', 'image/vnd.microsoft.icon', 'image/tiff', 'image/x-photoshop', 'image/raw', 'image/heic');
 
-        if (!is_dir($uploadDirectory)) {
-            mkdir($uploadDirectory, 0777, true);
-        }
+        if (in_array($fileType, $allowedTypes)) {
+            // Codifica l'immagine in Base64
+            $base64Image = base64_encode($fileData);
+            
+            // Formatta la stringa Base64 con il MIME type corretto
+            $base64ImageWithPrefix = 'data:' . $fileType . ';base64,' . $base64Image;
 
-        $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
-        $allowedTypes = array('jpg', 'jpeg', 'png', 'gif', 'webp', 'svg', 'bmp', 'ico', 'tiff', 'tif', 'psd', 'raw', 'psp', 'heic');
-
-        if (in_array(strtolower($fileType), $allowedTypes)) {
-            if (move_uploaded_file($_FILES['file']['tmp_name'], $targetFilePath)) {
-                // Leggi il contenuto del file
-                $fileData = file_get_contents($targetFilePath);
-                
-                // Codifica l'immagine in Base64
-                $base64Image = base64_encode($fileData);
-                
-                // Ottieni il mime type corretto per l'immagine
-                $base64MimeType = mime_content_type($targetFilePath);
-                
-                // Formatta la stringa Base64
-                $base64ImageWithPrefix = 'data:' . $base64MimeType . ';base64,' . $base64Image;
-
-                // Stampa la stringa Base64
-                echo $base64ImageWithPrefix;
-            } else {
-                http_response_code(500);
-                echo 'Errore nel salvataggio del file.';
-            }
+            // Stampa la stringa Base64
+            echo $base64ImageWithPrefix;
         } else {
             http_response_code(400);
             echo 'Formato file non supportato.';

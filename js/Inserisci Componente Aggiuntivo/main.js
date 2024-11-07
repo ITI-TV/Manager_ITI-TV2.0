@@ -75,7 +75,7 @@ function invioComponenteAggiuntivo() {
             xhr.onload = function () {
                 if (xhr.status === 200) {
                     let response = xhr.responseText;
-                    console.log(response)
+                    console.log(response);
 
                     $.post('php/setters.php', {
                         Titolo: document.getElementById('formTitoloComponentiAggiuntivi').value,
